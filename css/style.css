@@ -1,18 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;500&family=Merienda+One&display=swap');
+
+:root{
+  --brown: #993333;
+  --text: #454545;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
-  background: rgb(252, 200, 104);
-  background: linear-gradient(
-    180deg,
-    rgba(252, 200, 104, 1) 0%,
-    rgba(203, 152, 102, 1) 16%,
-    rgba(203, 102, 51, 1) 33%,
-    rgba(102, 51, 51, 1) 51%,
-    rgba(102, 152, 51, 1) 66%,
-    rgba(51, 152, 152, 1) 84%,
-    rgba(52, 103, 103, 1) 100%
-  );
+  background: rgb(252,203,104);
+background: linear-gradient(180deg, rgba(252,203,104,1) 0%, rgba(203,152,102,1) 14%, rgba(203,102,51,1) 28%, rgba(101,152,102,1) 56%, rgba(102,152,51,1) 70%, rgba(51,152,152,1) 84%, rgba(52,103,103,1) 100%);
   margin: 0;
   padding: 0;
+  font-family: 'Dosis', sans-serif;
+}
+
+h2{
+  color: var(--brown);
+  font-size: 3.5rem;
+  font-family: 'Merienda One', cursive;
+}
+
+h2 small{
+  display: block;
+}
+
+h3{
+  color: var(--text);
+  font-size: 2.2rem;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 300;
+}
+
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.container-fluid {
+  width: 100%;
+  text-align: center;
+  margin: 50px auto;
+}
+.container-fluid .zoom {
+  background-image: url(../images/anonimo.jpg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  width: 100%;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.container-fluid .zoom img {
+  transition: opacity 0.5s;
+  display: block;
+  width: 100%;
+}
+.container-fluid .zoom img:hover {
+  opacity: 0;
+}
+
+.img-fluid{
+  width: 100%;
+}
+
+.m-20{
+  margin: 20% 0 !important;
+}
+
+.mt-20{
+  margin-top: 20% !important;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-center{
+  text-align: center;
 }
 
 .thumbs-block {
@@ -50,24 +117,57 @@ body {
   top: 0;
 }
 
-.container {
-  width: 100%;
-  text-align: center;
-  margin: 50px auto;
+.w-50{
+  width: calc(50% - 5px);
+  display: inline-block;
 }
-.container .zoom {
-  background-image: url(../images/anonimo.jpg);
-  background-position: 50% 50%;
+
+.w-80{
+  width: 80%;
+}
+
+.white h3{
+  color: #fff;
+}
+
+/* background middle layer*/
+div#parallax-bg-1, div#parallax-bg-2{
+  position: absolute;
+}
+
+div#parallax-bg-1-2 {
+  position: relative;
+}
+
+div#bg-1-1 {
+  background: url("../images/background-dayro-1.png");
+  background-size: contain;
   background-repeat: no-repeat;
+  width: 1000px;
+  height: 1000px;
+  top: -100px;
+  transform: translate(-300px, 0px);
+}
+
+div#bg-1-2 {
+  background: url("../images/brazo-dayro-1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
   width: 100%;
-  overflow: hidden;
-  cursor: zoom-in;
+  height: 700px;
+  top: 0;
+  right: 0;
+  position: relative;
 }
-.container .zoom img {
-  transition: opacity 0.5s;
-  display: block;
-  width: 100%;
+
+div#bg-2-1 {
+  background: url("../images/brazo-dayro-2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1000px;
+  height: 1000px;
+  top: -100px;
+  transform: translate(-300px, 0px);
 }
-.container .zoom img:hover {
-  opacity: 0;
-}
+
