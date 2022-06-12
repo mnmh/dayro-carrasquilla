@@ -33,6 +33,9 @@ $(function () {
     });
 });
 
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(Draggable);
+
 const imageContainer = document.querySelector(".zoom");
 imageContainer.onmousemove = (event) => {
   zoom(event);
@@ -55,13 +58,3 @@ for (var i = 0; i < thumbs.length; i++) {
       "url(" + this.src + ")";
   };
 }
-
-/***PARALLAX***/
-
-gsap.to(".parallax-bg", {
-  scrollTrigger: {
-    scrub: true
-  }, 
-  y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
-  ease: "none"
-});

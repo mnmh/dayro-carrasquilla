@@ -11,11 +11,15 @@ html{
 
 body {
   min-height: 100vh;
-  background: rgb(252,203,104);
-background: linear-gradient(180deg, rgba(252,203,104,1) 0%, rgba(203,152,102,1) 14%, rgba(203,102,51,1) 28%, rgba(101,152,102,1) 56%, rgba(102,152,51,1) 70%, rgba(51,152,152,1) 84%, rgba(52,103,103,1) 100%);
+  
   margin: 0;
   padding: 0;
   font-family: 'Dosis', sans-serif;
+}
+
+.back-container{
+  background: transparent linear-gradient(180deg, var(--unnamed-color-fccb68) 0%, var(--unnamed-color-cb9866) 13%, var(--unnamed-color-cb6633) 32%, var(--unnamed-color-659866) 51%, var(--unnamed-color-669833) 69%, var(--unnamed-color-339898) 85%, var(--unnamed-color-346767) 100%) 0% 0% no-repeat padding-box;
+background: transparent linear-gradient(180deg, #FCCB68 0%, #CB9866 13%, #CB6633 32%, #659866 51%, #669833 69%, #339898 85%, #346767 100%) 0% 0% no-repeat padding-box;
 }
 
 h2{
@@ -28,22 +32,37 @@ h2 small{
   display: block;
 }
 
-h3{
+p{
   color: var(--text);
   font-size: 2.2rem;
   font-family: 'Dosis', sans-serif;
   font-weight: 300;
+  margin: 30px 0;
+}
+
+footer{
+  background-color: #173533;
+  padding: 50px 0;
+}
+
+.absolute{
+  position:  absolute;
+}
+
+.c-cta_content_text{
+  max-width: 900px !important;
 }
 
 .container{
-  max-width: 1000px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 .container-fluid {
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
   text-align: center;
-  margin: 50px auto;
+  padding: 0 !important;
 }
 .container-fluid .zoom {
   background-image: url(../images/anonimo.jpg);
@@ -126,9 +145,11 @@ h3{
   width: 80%;
 }
 
-.white h3{
-  color: #fff;
+.o-image_wrapper{
+  overflow: visible !important;
+  background-color: transparent;
 }
+
 
 /* background middle layer*/
 div#parallax-bg-1, div#parallax-bg-2{
@@ -139,26 +160,15 @@ div#parallax-bg-1-2 {
   position: relative;
 }
 
-div#bg-1-1 {
-  background: url("../images/background-dayro-1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 1000px;
-  height: 1000px;
-  top: -100px;
-  transform: translate(-300px, 0px);
+#bg-1-1 {
+  width: 100%;
+  transform: translate(-50%, 0px);
 }
 
-div#bg-1-2 {
-  background: url("../images/brazo-dayro-1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right center;
+
+#bg-1-2 {
   width: 100%;
-  height: 700px;
-  top: 0;
-  right: 0;
-  position: relative;
+  transform: translate(-50%, -20%);
 }
 
 div#bg-2-1 {
@@ -169,5 +179,26 @@ div#bg-2-1 {
   height: 1000px;
   top: -100px;
   transform: translate(-300px, 0px);
+}
+
+.f-h{
+  height: 100vh;
+  width: 100%;
+}
+
+.f-w{
+  width: 100%;
+}
+
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.z-1{
+  z-index: 100;
+  position: relative;
 }
 
