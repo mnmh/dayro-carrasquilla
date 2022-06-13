@@ -1,59 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;500&family=Merienda+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300;500&family=Merienda+One&display=swap");
 
-:root{
+:root {
   --brown: #993333;
   --text: #454545;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
-  
+
   margin: 0;
   padding: 0;
-  font-family: 'Dosis', sans-serif;
+  font-family: "Dosis", sans-serif;
 }
 
-.back-container{
-  background: transparent linear-gradient(180deg, var(--unnamed-color-fccb68) 0%, var(--unnamed-color-cb9866) 13%, var(--unnamed-color-cb6633) 32%, var(--unnamed-color-659866) 51%, var(--unnamed-color-669833) 69%, var(--unnamed-color-339898) 85%, var(--unnamed-color-346767) 100%) 0% 0% no-repeat padding-box;
-background: transparent linear-gradient(180deg, #FCCB68 0%, #CB9866 13%, #CB6633 32%, #659866 51%, #669833 69%, #339898 85%, #346767 100%) 0% 0% no-repeat padding-box;
+.back-container {
+  background: transparent
+    linear-gradient(
+      180deg,
+      var(--unnamed-color-fccb68) 0%,
+      var(--unnamed-color-cb9866) 13%,
+      var(--unnamed-color-cb6633) 32%,
+      var(--unnamed-color-659866) 51%,
+      var(--unnamed-color-669833) 69%,
+      var(--unnamed-color-339898) 85%,
+      var(--unnamed-color-346767) 100%
+    )
+    0% 0% no-repeat padding-box;
+  background: transparent
+    linear-gradient(
+      180deg,
+      #fccb68 0%,
+      #cb9866 13%,
+      #cb6633 32%,
+      #659866 51%,
+      #669833 69%,
+      #339898 85%,
+      #346767 100%
+    )
+    0% 0% no-repeat padding-box;
 }
 
-h2{
+h2 {
   color: var(--brown);
   font-size: 3.5rem;
-  font-family: 'Merienda One', cursive;
+  font-family: "Merienda One", cursive;
 }
 
-h2 small{
+h2 small {
   display: block;
 }
 
-p{
+p {
   color: var(--text);
   font-size: 2.2rem;
-  font-family: 'Dosis', sans-serif;
+  font-family: "Dosis", sans-serif;
   font-weight: 300;
   margin: 30px 0;
 }
 
-footer{
+footer {
   background-color: #173533;
   padding: 50px 0;
 }
 
-.absolute{
-  position:  absolute;
+.absolute {
+  position: absolute;
 }
 
-.c-cta_content_text{
+.c-cta_content_text {
   max-width: 900px !important;
 }
 
-.container{
+.container {
   max-width: 700px;
   margin: 0 auto;
 }
@@ -81,24 +103,35 @@ footer{
   opacity: 0;
 }
 
-.img-fluid{
+.img-fluid {
   width: 100%;
 }
 
-.m-20{
+.m-20 {
   margin: 20% 0 !important;
 }
 
-.mt-20{
+.mt-20 {
   margin-top: 20% !important;
 }
 
-.text-right{
+.o-image {
+  opacity: 1;
+}
+
+.text-right {
   text-align: right;
 }
 
-.text-center{
+.text-center {
   text-align: center;
+}
+
+.thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .thumbs-block {
@@ -132,27 +165,28 @@ footer{
 .thumbs-block .thumbs .background img {
   position: absolute;
   width: auto !important;
+  max-width: inherit;
   left: 0;
   top: 0;
 }
 
-.w-50{
+.w-50 {
   width: calc(50% - 5px);
   display: inline-block;
 }
 
-.w-80{
+.w-80 {
   width: 80%;
 }
 
-.o-image_wrapper{
+.o-image_wrapper {
   overflow: visible !important;
   background-color: transparent;
 }
 
-
 /* background middle layer*/
-div#parallax-bg-1, div#parallax-bg-2{
+div#parallax-bg-1,
+div#parallax-bg-2 {
   position: absolute;
 }
 
@@ -164,7 +198,6 @@ div#parallax-bg-1-2 {
   width: 100%;
   transform: translate(-50%, 0px);
 }
-
 
 #bg-1-2 {
   width: 100%;
@@ -181,12 +214,12 @@ div#bg-2-1 {
   transform: translate(-300px, 0px);
 }
 
-.f-h{
+.f-h {
   height: 100vh;
   width: 100%;
 }
 
-.f-w{
+.f-w {
   width: 100%;
 }
 
@@ -197,8 +230,137 @@ div#bg-2-1 {
   flex-direction: column;
 }
 
-.z-1{
+.z-1 {
   z-index: 100;
   position: relative;
 }
 
+/** gallery **/
+
+.gallery {
+  padding: 2px;
+}
+.gallery .photo {
+  position: relative;
+  float: left;
+  margin: 2px;
+  width: 33%;
+  cursor: pointer;
+  background: #000;
+  -webkit-animation: small 0.5s ease-in-out both;
+  animation: small 0.5s ease-in-out both;
+  -webkit-transition: z-index 0s linear 0.5s, -webkit-transform 0.5s ease-in-out;
+  transition: z-index 0s linear 0.5s, -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, z-index 0s linear 0.5s;
+  transition: transform 0.5s ease-in-out, z-index 0s linear 0.5s,
+    -webkit-transform 0.5s ease-in-out;
+}
+.gallery .photo.active {
+  -webkit-animation: big 0.5s ease-in-out both;
+  animation: big 0.5s ease-in-out both;
+}
+.gallery .photo.photo:nth-child(1) {
+  -webkit-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+.gallery .photo.photo:nth-child(2) {
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+}
+.gallery .photo.photo:nth-child(3) {
+  -webkit-transform-origin: 100% 0%;
+  transform-origin: 100% 0%;
+}
+
+.gallery .photo.photo:nth-child(4) {
+  -webkit-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+}
+.gallery .photo.photo:nth-child(5) {
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+.gallery .photo.photo:nth-child(6) {
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+.gallery .photo.photo:nth-child(7) {
+  -webkit-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+}
+.gallery .photo.photo:nth-child(8) {
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+.gallery .photo.photo:nth-child(9) {
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+
+.gallery .photo img {
+  width: 100%;
+  height: auto;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+.gallery .photo.away img {
+  opacity: 0;
+}
+
+@-webkit-keyframes big {
+  0%,
+  1% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    z-index: 2;
+  }
+  100% {
+    z-index: 2;
+    -webkit-transform: scale(3.0625);
+    transform: scale(3.0625);
+  }
+}
+
+@keyframes big {
+  0%,
+  1% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    z-index: 2;
+  }
+  100% {
+    z-index: 2;
+    -webkit-transform: scale(3.0625);
+    transform: scale(3.0625);
+  }
+}
+@-webkit-keyframes small {
+  0% {
+    -webkit-transform: scale(3.0625);
+    transform: scale(3.0625);
+    z-index: 2;
+  }
+  99% {
+    z-index: 2;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    z-index: 1;
+  }
+}
+@keyframes small {
+  0% {
+    -webkit-transform: scale(3.0625);
+    transform: scale(3.0625);
+    z-index: 2;
+  }
+  99% {
+    z-index: 2;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    z-index: 1;
+  }
+}

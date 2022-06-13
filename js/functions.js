@@ -58,3 +58,12 @@ for (var i = 0; i < thumbs.length; i++) {
       "url(" + this.src + ")";
   };
 }
+
+/** Gallery */
+
+$(".photo").on("click", function() {
+  $(".photo").toggleClass("away");
+  $(this)
+    .removeClass("away")
+    .toggleClass("active");
+});
