@@ -364,3 +364,60 @@ div#bg-2-1 {
     z-index: 1;
   }
 }
+
+.horizontal-scroll {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  left: 0;
+}
+
+.pin-wrap {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 10vw;
+}
+
+.pin-wrap > * {
+    min-width: 60vw;
+    padding: 0 5vw;
+}
+
+/***TOGGLE***/
+
+.toggle{
+  padding: 20px;
+  border-radius: 100px;
+  border: 1px solid;
+  font-size: 30px;
+  transition: all .4s ease-in-out;
+}
+
+.toggle img{
+  width: 30px;
+  margin: -7px 10px 10px;
+  vertical-align: middle;
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(346deg) brightness(0%) contrast(100%);
+  transition: all .4s ease-in-out;
+}
+
+.toggle:hover img{
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
+  transition: all .4s ease-in-out;
+}
+
+.toggle-content {
+	display: none;
+	height: 0;
+  opacity: 0;
+	overflow: hidden;
+	transition: height 350ms ease-in-out, opacity 750ms ease-in-out;
+}
+
+.toggle-content.is-visible {
+	display: block;
+	height: auto;
+  opacity: 1;
+}
