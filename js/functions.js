@@ -1,4 +1,40 @@
-gsap.registerPlugin(ScrollTrigger, Draggable);
+$(function () {
+  const $bl = $(".thumbs-block"),
+    $th = $(".thumbs"),
+    blW = $bl.outerWidth(),
+    blSW = $bl.prop("scrollWidth"),
+    wDiff = blSW / blW - 1, // widths difference ratio
+    mPadd = 60, // Mousemove Padding
+    damp = 50; // Mousemove response softness
+
+  let posX = 0,
+    mX2 = 0, // Modified mouse position
+    mmAA = blW - mPadd * 2, // The mousemove available area
+    mmAAr = blW / mmAA, // get available mousemove fidderence ratio
+    itv = null;
+
+  const anim = () => {
+    posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"
+    $th.css({
+      transform: `translateX(${-posX * wDiff}px)`,
+    });
+  };
+
+  $bl
+    .on("mousemove", function (e) {
+      const mouseX = e.pageX - $(this).prop("offsetLeft");
+      mX2 = Math.min(Math.max(0, mouseX - mPadd), mmAA) * mmAAr;
+    })
+    .on("mouseenter", function (e) {
+      itv = setInterval(anim, 10);
+    })
+    .on("mouseleave", function () {
+      clearInterval(itv);
+    });
+});
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(Draggable);
 
 const imageContainer = document.querySelector(".zoom");
 imageContainer.onmousemove = (event) => {
@@ -22,6 +58,15 @@ for (var i = 0; i < thumbs.length; i++) {
       "url(" + this.src + ")";
   };
 }
+
+/** Gallery */
+
+$(".photo").on("click", function() {
+  $(".photo").toggleClass("away");
+  $(this)
+    .removeClass("away")
+    .toggleClass("active");
+});
 
 /* toggle */
 

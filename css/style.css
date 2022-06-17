@@ -214,12 +214,21 @@ div#bg-2-1 {
   transform: translate(-300px, 0px);
 }
 
+.pt-100{
+  padding: 100px 0;
+}
+
 .f-h {
   height: 100vh;
   width: 100%;
 }
 
 .f-w {
+  width: 100%;
+}
+
+.m-h {
+  height: 70vh;
   width: 100%;
 }
 
