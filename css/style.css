@@ -70,9 +70,12 @@ footer {
 .absolute {
   position: absolute;
 }
+.o-container{
+  max-width: 1200px;
+}
 
 .c-cta_content_text {
-  max-width: 900px !important;
+  max-width: 800px !important;
 }
 
 .container {
@@ -105,6 +108,11 @@ footer {
 
 .img-fluid {
   width: 100%;
+}
+
+.main-title{
+  font-size: 80px;
+  margin-bottom: 80px;
 }
 
 .m-20 {
