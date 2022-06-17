@@ -404,12 +404,17 @@ div#bg-2-1 {
 
 /***TOGGLE***/
 
-.toggle{
+.toggle, .graphic-table{
   padding: 20px;
   border-radius: 100px;
   border: 1px solid;
   font-size: 30px;
   transition: all .4s ease-in-out;
+}
+
+.graphic-table:hover{
+  background-color: #000;
+  color: #fff;
 }
 
 .toggle img{
