@@ -470,6 +470,34 @@ div#bg-2-1 {
   z-index: 999999;
 }
 
+.mask-image{
+  mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png");
+  mask-size: 100% 100%;
+  mask-mode: alpha;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png");
+  -webkit-mask-size: 300% 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.mask-image.is-inview{
+  mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png");
+  mask-size: 100% 100%;
+  mask-mode: alpha;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png");
+  -webkit-mask-size: 300% 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  animation-name: mask-animation-image;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
 /***ANIMATIONS***/
 
 .modal{
@@ -528,6 +556,18 @@ div#bg-2-1 {
     opacity: 1;
     mask-size: 300vw 300vh;
     -webkit-mask-size: 300vw 300vh;
+  }
+}
+@keyframes mask-animation-image {
+  0% {
+    opacity: 0;
+    mask-size: 0% 0%;
+    -webkit-mask-size: 0% 0%;
+  }
+  100% {
+    opacity: 1;
+    mask-size: 300% 100%;
+    -webkit-mask-size: 300% 100%;
   }
 }
 @keyframes mask-hide {
