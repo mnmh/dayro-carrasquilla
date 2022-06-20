@@ -264,12 +264,15 @@ div#bg-2-1 {
 
 .gallery {
   padding: 2px;
+  padding: 2px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .gallery .photo {
   position: relative;
   float: left;
   margin: 2px;
-  width: 33%;
+  width: 32%;
   cursor: pointer;
   background: #000;
   -webkit-animation: small 0.5s ease-in-out both;
@@ -443,30 +446,66 @@ div#bg-2-1 {
 
 .toggle-content {
   display: none;
-  height: 0;
+  height: auto;
   opacity: 0;
   overflow: hidden;
-  transition: height 350ms ease-in-out, opacity 750ms ease-in-out;
+  transition: opacity .3s ease-in-out;
 }
 
 .toggle-content.is-visible {
-  display: block;
-  height: auto;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 100vh !important;
   opacity: 1;
+  transition: opacity .3s ease-in-out;
+}
+
+.inside-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0px 18px 5px !important;
+  z-index: 999999;
+}
+
+.mask-image{
+  mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png");
+  mask-size: 100% 100%;
+  mask-mode: alpha;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png");
+  -webkit-mask-size: 300% 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.mask-image.is-inview{
+  mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png");
+  mask-size: 100% 100%;
+  mask-mode: alpha;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png");
+  -webkit-mask-size: 300% 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  animation-name: mask-animation-image;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 /***ANIMATIONS***/
 
-.content-modal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.wrapper-modal {
-  width: 100%;
-  max-width: 640px;
-  margin-right: auto;
-  margin-left: auto;
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: var(--cream);
   mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png");
   mask-size: 100% 100%;
   mask-mode: alpha;
@@ -474,63 +513,61 @@ div#bg-2-1 {
   mask-position: center;
   -webkit-mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png");
   -webkit-mask-size: 100% 100%;
-  -webkit-mask-mode: alpha;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   animation-name: mask-animation;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
-.wrapper-modal img {
-  width: 100%;
-  height: auto;
-  display: block;
-  mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647577382/assets/mask_cloud_horizontal_n35us0.png");
-  mask-size: 100% 100%;
-  mask-mode: alpha;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  -webkit-mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647577382/assets/mask_cloud_horizontal_n35us0.png");
-  -webkit-mask-size: 100% 100%;
-  -webkit-mask-mode: alpha;
-  animation-name: mask-animation-in;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+
+.mask-hide{
+  animation-name: mask-hide;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
+
+.modal#fragmentos{
+  background-color: #CB9866;
+}
+
+.modal#entre-dientes{
+  background-color: #987F4D;
+}
+
+.modal#anonimos{
+  background-color: #339898;
+}
+
+.content-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @keyframes mask-animation {
   0% {
-    opacity: 0;
-    mask-size: 50% 50%;
-    -webkit-mask-size: 50% 50%;
-  }
-  20% {
     opacity: 1;
-    mask-size: 100% 100%;
-    -webkit-mask-size: 100% 100%;
-  }
-  60% {
-    opacity: 1;
-    mask-size: 100% 100%;
-    -webkit-mask-size: 100% 100%;
-  }
-  80% {
-    opacity: 0;
-    mask-size: 50% 50%;
-    -webkit-mask-size: 50% 50%;
+    mask-size: 0vw 0vh;
+    -webkit-mask-size: 0vw 0vh;
   }
   100% {
-    opacity: 0;
-    mask-size: 50% 50%;
-    -webkit-mask-size: 50% 50%;
+    opacity: 1;
+    mask-size: 300vw 300vh;
+    -webkit-mask-size: 300vw 300vh;
   }
 }
-@keyframes mask-animation-in {
+@keyframes mask-animation-image {
   0% {
-    -webkit-mask-position: 0px center;
+    opacity: 0;
+    mask-size: 0% 0%;
+    -webkit-mask-size: 0% 0%;
   }
   100% {
-    -webkit-mask-position: 640px center;
+    opacity: 1;
+    mask-size: 300% 100%;
+    -webkit-mask-size: 300% 100%;
   }
 }
 
@@ -599,3 +636,17 @@ h3:nth-child(4) {
   /* height: 100%; */
   object-fit: contain;
 }
+
+@keyframes mask-hide {
+  0% {
+    opacity: 1;
+    mask-size: 300vw 300vh;
+    -webkit-mask-size: 300vw 300vh;
+  }
+  100% {
+    opacity: 1;
+    mask-size: 0vw 0vh;
+    -webkit-mask-size: 0vw 0vh;
+  }
+}
+ 

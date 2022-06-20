@@ -85,10 +85,6 @@ var show = function (elem) {
 	elem.classList.add('is-visible'); // Make the element visible
 	elem.style.height = height; // Update the max-height
 
-	// Once the transition is complete, remove the inline max-height so the content can scale responsively
-	window.setTimeout(function () {
-		elem.style.height = '';
-	}, 350);
 
 };
 
@@ -97,6 +93,7 @@ var hide = function (elem) {
 
 	// Give the element a height to change from
 	elem.style.height = elem.scrollHeight + 'px';
+  elem.classList.add('mask-hide');
 
 	// Set the height back to 0
 	window.setTimeout(function () {
@@ -106,7 +103,8 @@ var hide = function (elem) {
 	// When the transition is complete, hide it
 	window.setTimeout(function () {
 		elem.classList.remove('is-visible');
-	}, 350);
+    elem.classList.remove('mask-hide');
+	}, 2000);
 
 };
 
@@ -141,3 +139,35 @@ document.addEventListener('click', function (event) {
 	toggle(content);
 
 }, false);
+
+/**Drag horizontal */
+
+const slider = document.querySelector('.thumbs-block');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+});
+
+slider.addEventListener('mousemove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 1; //scroll-fast
+  slider.scrollLeft = scrollLeft - walk;
+});
