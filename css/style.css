@@ -131,6 +131,248 @@ footer {
   margin-top: 20% !important;
 }
 
+.linea-interactiva {
+  position: relative;
+  height: 100%;
+}
+
+.linea-interactiva .fechas {
+  height: 170%;
+  position: absolute;
+  z-index: 9999;
+  top: -24%;
+}
+
+.linea-interactiva .fechas .fecha {
+  font-size: 2rem;
+  color: #fff;
+  font-family: "Dosis", sans-serif;
+  font-weight: 300;
+  position: absolute;
+}
+
+.linea-interactiva .fechas{
+  cursor: pointer;
+}
+
+.linea-interactiva .fechas.fecha-1980 {
+  width: 30%;
+}
+
+.linea-interactiva .fechas.fecha-1988 {
+  width: 21%;
+  left: 30%;
+}
+
+.linea-interactiva .fechas.fecha-1997 {
+  width: 10%;
+  left: 51%;
+}
+
+.linea-interactiva .fechas.fecha-2005 {
+  width: 39%;
+  left: 61%;
+}
+
+.linea-interactiva .fechas.fecha-1980 .content-fecha {
+  position: absolute;
+  height: 0%;
+  width: 100%;
+  bottom: 30%;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.linea-interactiva .fechas.fecha-1988 .content-fecha {
+  position: absolute;
+  height: 0%;
+  width: 100%;
+  top: 0%;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.linea-interactiva .fechas.fecha-1997 .content-fecha {
+  position: absolute;
+  height: 0%;
+  width: 100%;
+  top: 0%;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.linea-interactiva .fechas.fecha-2005 .content-fecha {
+  position: absolute;
+  height: 0%;
+  width: 100%;
+  bottom: 30%;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.linea-interactiva .fechas.fecha-1980 .fecha {
+  bottom: 5%;
+  left: 25%;
+}
+
+.linea-interactiva .fechas.fecha-1988 .fecha {
+  top: 20%;
+  left: 0%;
+}
+
+.linea-interactiva .fechas.fecha-1997 .fecha {
+  top: 32%;
+  left: 0%;
+  width: 100%;
+}
+
+.linea-interactiva .fechas.fecha-2005 .fecha {
+  bottom: 5%;
+  left: 25%;
+}
+
+.linea-interactiva .fechas.fecha-1980 .linea-fecha {
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-right: 1px;
+  border-top: 1px;
+  width: 100%;
+  height: 260px;
+  bottom: 0%;
+  left: 18%;
+}
+
+.linea-interactiva .fechas.fecha-1988 .linea-fecha {
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-left: 1px;
+  border-bottom: 1px;
+  width: 65%;
+  height: 254px;
+  top: 40%;
+  left: 0%;
+}
+
+.linea-interactiva .fechas.fecha-1997 .linea-fecha {
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-right: 1px;
+  border-bottom: 1px;
+  width: 100%;
+  height: 201px;
+  top: 52%;
+  left: 2%;
+}
+
+.linea-interactiva .fechas.fecha-2005 .linea-fecha {
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-right: 1px;
+  border-top: 1px;
+  width: 100%;
+  height: 260px;
+  bottom: 0%;
+  left: 18%;
+}
+
+.linea-interactiva .fechas.fecha-1980 .forma-interactiva {
+  width: 88%;
+  height: 27%;
+  transform: skew(0deg, 6deg);
+  -webkit-transform: skew(0deg, 0deg);
+  -moz-transform: skew(0deg, 0deg);
+  -o-transform: skew(0deg, 0deg);
+  -ms-transform: skew(0deg, 0deg);
+  position: absolute;
+  top: 37%;
+  left: 10%;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.linea-interactiva .fechas.fecha-1988 .forma-interactiva {
+  width: 56%;
+  height: 37%;
+  transform: skew(-2deg, 3deg);
+  -webkit-transform: skew(-2deg, 3deg);
+  -moz-transform: skew(-2deg, 3deg);
+  -o-transform: skew(-2deg, 3deg);
+  -ms-transform: skew(-2deg, 3deg);
+  position: absolute;
+  top: 26%;
+  left: 13%;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.linea-interactiva .fechas.fecha-1997 .forma-interactiva {
+  width: 74%;
+  height: 29%;
+  transform: skew(-2deg, 3deg);
+  -webkit-transform: skew(-2deg, 3deg);
+  -moz-transform: skew(-2deg, 3deg);
+  -o-transform: skew(-2deg, 3deg);
+  -ms-transform: skew(-2deg, 3deg);
+  position: absolute;
+  left: 0%;
+  top: 34%;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.linea-interactiva .fechas.fecha-2005 .forma-interactiva {
+  width: 36%;
+  height: 18%;
+  transform: skew(0deg, 6deg);
+  -webkit-transform: skew(-3deg, 3deg);
+  -moz-transform: skew(-3deg, 3deg);
+  -o-transform: skew(-3deg, 3deg);
+  -ms-transform: skew(-3deg, 3deg );
+  position: absolute;
+  top: 37%;
+  left: 4%;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.linea-interactiva .fechas:hover .forma-interactiva {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+  background: rgb(252 203 104 / 50%);
+}
+
+.linea-interactiva .fechas.fechas.fecha-1980:hover .content-fecha {
+  height: 50%;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.linea-interactiva .fechas.fechas.fecha-1988:hover .content-fecha {
+  height: 50%;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.linea-interactiva .fechas.fechas.fecha-1997:hover .content-fecha {
+  height: 50%;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.linea-interactiva .fechas.fechas.fecha-2005:hover .content-fecha {
+  height: 50%;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
 .o-image {
   opacity: 1;
 }
@@ -234,6 +476,9 @@ div#bg-2-1 {
   padding: 100px 0;
 }
 
+.pb-100 {
+  padding-bottom: 100px !important;
+}
 .f-h {
   height: 100vh;
   width: 100%;
@@ -449,7 +694,7 @@ div#bg-2-1 {
   height: auto;
   opacity: 0;
   overflow: hidden;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .toggle-content.is-visible {
@@ -459,7 +704,7 @@ div#bg-2-1 {
   justify-content: center;
   height: 100vh !important;
   opacity: 1;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .inside-button {
@@ -470,7 +715,7 @@ div#bg-2-1 {
   z-index: 999999;
 }
 
-.mask-image{
+.mask-image {
   mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png");
   mask-size: 100% 100%;
   mask-mode: alpha;
@@ -482,7 +727,7 @@ div#bg-2-1 {
   -webkit-mask-position: center;
 }
 
-.mask-image.is-inview{
+.mask-image.is-inview {
   mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png");
   mask-size: 100% 100%;
   mask-mode: alpha;
@@ -500,7 +745,7 @@ div#bg-2-1 {
 
 /***ANIMATIONS***/
 
-.modal{
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -521,22 +766,22 @@ div#bg-2-1 {
   animation-fill-mode: forwards;
 }
 
-.mask-hide{
+.mask-hide {
   animation-name: mask-hide;
   animation-duration: 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
-.modal#fragmentos{
-  background-color: #CB9866;
+.modal#fragmentos {
+  background-color: #cb9866;
 }
 
-.modal#entre-dientes{
-  background-color: #987F4D;
+.modal#entre-dientes {
+  background-color: #987f4d;
 }
 
-.modal#anonimos{
+.modal#anonimos {
   background-color: #339898;
 }
 
@@ -625,7 +870,7 @@ h3:nth-child(4) {
   position: absolute;
   z-index: 500;
   width: 100%;
-  max-height: 70%;
+  max-height: 100vh;
   bottom: 0;
   mix-blend-mode: multiply;
 }

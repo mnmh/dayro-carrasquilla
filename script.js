@@ -39,7 +39,7 @@ const tlMundo = gsap.timeline({
   .from("h3:nth-child(4)", { y: innerHeight }, "-=0.2")
   .to(".map-barrios", { autoAlpha: 0, scale: 5, xPercent: -80, yPercent: -125, duration: 1.8 }, "-=0.2")
   .from(".map-nelson", { autoAlpha: 0, scale: 0.6, xPercent: 10, yPercent: 18, duration: 1.2 }, "<0.35")
-  // .to({}, { duration: 0.5 })
+  .to({}, { duration: 0.5 })
 ;
 
 // let pinPazzz = document.getElementById("pinPazzz");
