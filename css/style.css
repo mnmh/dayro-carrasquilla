@@ -785,6 +785,10 @@ div#bg-2-1 {
   background-color: #339898;
 }
 
+.modal#pazzz {
+  background-color: #4D9866;
+}
+
 .content-modal {
   display: flex;
   flex-direction: column;
