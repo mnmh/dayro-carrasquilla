@@ -2,7 +2,7 @@
 
 :root {
   --brown: #993333;
-  --text: #454545;
+  --text: #fff;
   --cream: #fccb68;
 }
 
@@ -80,6 +80,10 @@ footer {
 .o-container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.big-quote{
+  font-size: 2.2rem;
 }
 
 .c-cta_content_text {
