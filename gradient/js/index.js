@@ -1,9 +1,10 @@
 gsap.registerPlugin(ScrollTrigger);
 
 const paragraphs = Array.from(document.querySelectorAll("#container p"));
-paragraphs.shift();
+paragraphs.shift(); 
 const titles = Array.from(document.querySelectorAll("#container h2"));
 const manos = Array.from(document.querySelectorAll(".manoBox"));
+//const gradient = document.querySelectorAll(".gradient");
 
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector("#container"),
@@ -23,6 +24,20 @@ ScrollTrigger.scrollerProxy("#container", {
   pinType: document.querySelector("#container").style.transform ? "transform" : "fixed"
 });
 
+/* gsap.to("html", {
+  "--color1": "#98328e",
+  "--color2": "#98328e",
+  scrollTrigger: {
+    markers: true,
+    scroller: '#container',
+    trigger: "#color1",
+    pin: true,
+    start: 'top top',
+    end: 'bottom top',
+    scrub: true
+  }
+}); */
+
 manos.forEach(mano => {
   if (mano.querySelector(".manoBrillo") != null) {
     let manoBrillo = mano.querySelector(".manoBrillo");
@@ -30,7 +45,7 @@ manos.forEach(mano => {
       //markers: true,
       scroller: '#container',
       trigger: mano,
-      start: '22% top+=50%',
+      start: '22% top+=60%',
       onEnter: () => manoBrillo.classList.toggle('active'),
       onLeaveBack: () => manoBrillo.classList.toggle('active')
     });

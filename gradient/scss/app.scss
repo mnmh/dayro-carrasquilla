@@ -106,8 +106,8 @@ img {
 }
 
 html {
-  --color1: blue;
-  --color2: violet;
+  --color1: #3d5fc6;
+  --color2: #98328e;
 }
 
 //-//
@@ -128,6 +128,11 @@ html {
   font-display: swap;
 }
 
+.gif {
+  margin: auto;
+  width: 50vw;
+}
+
 .gradient {
   position: fixed;
   top: 0;
@@ -141,6 +146,8 @@ html {
 #container {
   padding: 0 0 20vh 0;
   position: relative;
+  z-index: 100;
+  background-color: transparent;
 
   &::after {
     content: "";
@@ -190,54 +197,32 @@ html {
     border-left: 1px solid rgba($color: beige, $alpha: 0.1);
 
     &:first-child {
-      height: 100vh;
+      height: 106vh;
       display: flex;
       align-items: center;
+      padding-bottom: 0;
+      margin-bottom: 0;
     }
   }
 
   .manoBox {
     position: absolute;
-    //border: 1px solid yellow;
+    z-index: 200;
 
-    .mano {
-      position: relative;
+    img {
       width: 100%;
 
-      .manoA {
-        position: absolute;
+      &.manoA {
+        position: relative;
         z-index: 10;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: MidnightBlue;
       }
 
-      .manoB {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.2;
-        background-color: MidnightBlue;
-        -webkit-mask-image: url("/images/mano-1b.svg");
-        mask-image: url("/images/mano-1b.svg");
-      }
-
-      .manoBrillo {
+      &.manoBrillo {
         position: absolute;
         z-index: 20;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
         opacity: 0;
-        background-color: yellow;
-        -webkit-mask-image: url("/images/mano-1brillo.svg");
-        mask-image: url("/images/mano-1brillo.svg");
         -webkit-transition: opacity 0.7s ease-out;
         -moz-transition: opacity 0.7s ease-out;
         -o-transition: opacity 0.7s ease-out;
@@ -247,87 +232,30 @@ html {
           opacity: 1;
         }
       }
-
-      img {
-        width: 100%;
-        opacity: 0;
-      }
     }
 
-    &.mano1 {
+    &#mano1 {
       width: 70vw;
       top: 20%;
       left: -20vw;
-
-      .manoA {
-        -webkit-mask-image: url("/images/mano-1a.svg");
-        mask-image: url("/images/mano-1a.svg");
-      }
-
-      .manoB {
-        -webkit-mask-image: url("/images/mano-1b.svg");
-        mask-image: url("/images/mano-1b.svg");
-      }
-
-      .manoBrillo {
-        -webkit-mask-image: url("/images/mano-1brillo.svg");
-        mask-image: url("/images/mano-1brillo.svg");
-      }
     }
 
-    &.mano2 {
+    &#mano2 {
       width: 70vw;
       top: 40%;
       right: -20vw;
-
-      .manoA {
-        -webkit-mask-image: url("/images/mano-2a.svg");
-        mask-image: url("/images/mano-2a.svg");
-      }
-
-      .manoB {
-        -webkit-mask-image: url("/images/mano-2b.svg");
-        mask-image: url("/images/mano-2b.svg");
-      }
-
-      .manoBrillo {
-        background-color: aqua;
-        -webkit-mask-image: url("/images/mano-2brillo.svg");
-        mask-image: url("/images/mano-2brillo.svg");
-      }
     }
 
-    &.mano3 {
+    &#mano3 {
       width: 70vw;
       top: 60%;
       left: -20vw;
-
-      .manoA {
-        -webkit-mask-image: url("/images/mano-3a.svg");
-        mask-image: url("/images/mano-3a.svg");
-      }
-
-      .manoB {
-        -webkit-mask-image: url("/images/mano-3b.svg");
-        mask-image: url("/images/mano-3b.svg");
-      }
-
-      .manoBrillo {
-        background-color: greenyellow;
-        -webkit-mask-image: url("/images/mano-3brillo.svg");
-        mask-image: url("/images/mano-3brillo.svg");
-      }
     }
 
-    &.mano4 {
+    &#mano4 {
       width: 70vw;
       bottom: 2%;
       right: -1vw;
-
-      .manoA {
-        -webkit-mask-image: url("/images/mano-4a.svg");
-        mask-image: url("/images/mano-4a.svg");
-      }
     }
   }
 
