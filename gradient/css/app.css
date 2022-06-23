@@ -110,8 +110,7 @@ img {
 }
 
 html {
-  --color1: #3d5fc6;
-  --color2: #98328e;
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -133,34 +132,52 @@ html {
   width: 50vw;
 }
 
-.gradient {
+#gradient {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
   z-index: -10;
-  background: -webkit-gradient(linear, left top, left bottom, from(var(--color1)), to(var(--color2)));
-  background: linear-gradient(to bottom, var(--color1), var(--color2));
 }
 
 #container {
-  padding: 0 0 20vh 0;
+  padding: 0;
   position: relative;
   z-index: 100;
+  overflow-x: hidden;
+  padding-bottom: 10vh;
   background-color: transparent;
+  mix-blend-mode: overlay;
 }
 #container::after {
   content: "";
-  width: 100%;
   position: absolute;
-  z-index: 100;
-  bottom: 0;
-  left: 10vw;
-  width: 80vw;
-  height: 12vh;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  mix-blend-mode: overlay;
+  z-index: 500;
+  bottom: 5vh;
+  left: 15vw;
+  width: 70vw;
+  height: 2px;
+  border-top: 1px dashed rgba(245, 245, 220, 0.2);
+}
+#container #colorsBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 100vh);
+  pointer-events: none;
+}
+#container #colorsBox .colorTrigger {
+  position: relative;
+  width: 100%;
+}
+#container section {
+  width: 100%;
+  padding: 10vh 0 8vh 0;
+}
+#container section:first-of-type {
+  padding: 0 0 30vh 0;
 }
 #container h2,
 #container p {
@@ -176,8 +193,9 @@ html {
   font-style: normal;
   line-height: 1;
   max-width: 50vw;
-  margin: 15vh 0 5vh 37vw;
-  color: pink;
+  margin: 0 0 5vh 37vw;
+  color: #e2e2b7;
+  opacity: 0.8;
 }
 #container p {
   --min: 1.6rem;
@@ -191,10 +209,15 @@ html {
   margin-bottom: 3rem;
   margin-left: 40vw;
   color: beige;
-  padding: 5px 0 5px 25px;
-  border-left: 1px solid rgba(245, 245, 220, 0.1);
+  padding: 10px 0 10px 25px;
+  border-left: 1px solid rgba(245, 245, 220, 0.2);
 }
 #container p:first-child {
+  --min: 1.8rem;
+  --val: calc(0.7vw + 1.4rem);
+  --max: 3rem;
+  color: white;
+  max-width: 100vw;
   height: 106vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -204,10 +227,13 @@ html {
           align-items: center;
   padding-bottom: 0;
   margin-bottom: 0;
+  font-weight: 300;
+  border-left: 1px solid rgba(245, 245, 220, 0.6);
 }
 #container .manoBox {
   position: absolute;
   z-index: 200;
+  pointer-events: none;
 }
 #container .manoBox img {
   width: 100%;
@@ -230,7 +256,7 @@ html {
 }
 #container .manoBox#mano1 {
   width: 70vw;
-  top: 20%;
+  top: 25%;
   left: -20vw;
 }
 #container .manoBox#mano2 {
@@ -248,3 +274,8 @@ html {
   bottom: 2%;
   right: -1vw;
 }
+
+/* .nop {
+  color: rgb(252, 203, 104), rgb(203, 152, 102), rgb(203, 102, 51), rgb(101, 152, 102), rgb(102, 152, 51), rgb(51, 152, 152), rgb(52, 103, 103);
+
+} */
