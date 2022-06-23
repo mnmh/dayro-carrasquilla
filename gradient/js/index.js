@@ -6,7 +6,15 @@ const paragraphs = Array.from(container.querySelectorAll("p"));
 paragraphs.shift();
 const manos = Array.from(container.querySelectorAll(".manoBox"));
 const gradient = document.querySelector("#gradient");
-const colors = ["rgb(252, 203, 104)", "rgb(252, 203, 104)", "rgb(203, 152, 102)", "rgb(203, 102, 51)", "rgb(101, 152, 102)", "rgb(102, 152, 51)", "rgb(51, 152, 152)", "rgb(52, 103, 103)"];
+const colors = [
+  'linear-gradient(180deg, rgb(252,203,104) 0%, rgb(252,203,104) 90%)',
+  `linear-gradient(${gsap.utils.random(110, 240)}deg, rgb(252,203,104) 0%, rgb(203,152,102) 90%)`,
+  `linear-gradient(${gsap.utils.random(110, 240)}deg, rgb(203,152,102) 0%, rgb(203,102,51) 90%)`,
+  `linear-gradient(${gsap.utils.random(110, 240)}deg, rgb(203,102,51) 0%, rgb(101,152,102) 90%)`,
+  `linear-gradient(${gsap.utils.random(110, 240)}deg, rgb(101,152,102) 0%, rgb(102,152,51) 90%)`,
+  `linear-gradient(${gsap.utils.random(110, 240)}deg, rgb(102,152,51) 0%, rgb(51,152,152) 90%)`,
+  `linear-gradient(${gsap.utils.random(110, 240)}deg, rgb(51,152,152) 0%, rgb(52,103,103) 90%)`
+];
 const colorsTriggers = [];
 
 let divBox = document.createElement("div");
@@ -15,11 +23,11 @@ container.appendChild(divBox);
 
 gradient.style.background = `linear-gradient(to bottom, ${colors[0]}, ${colors[1]}`;
 
-for (let i = 0; i < (colors.length - 2); ++i){
+for (let i = 0; i < (colors.length - 1); ++i){
   let div = document.createElement("div");
   div.classList.add("colorTrigger");
   divBox.appendChild(div);
-  div.style.height = `${100/(colors.length - 2)}%`;
+  div.style.height = `${100/(colors.length - 1)}%`;
   colorsTriggers.push(div);
 }
 
@@ -92,8 +100,7 @@ manos.forEach(mano => {
 });
 
 colorsTriggers.forEach((color, i) => {
-  gsap.fromTo(gradient, { background: `linear-gradient(to bottom, ${colors[i]}, ${colors[i + 1]})` }, {
-    background: `linear-gradient(to bottom, ${colors[i + 1]}, ${colors[i + 2]})`,
+  gsap.fromTo(gradient, { background: colors[i] }, { background: colors[i + 1],
     scrollTrigger: {
       scroller: container,
       trigger: color,
