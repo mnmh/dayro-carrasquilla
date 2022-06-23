@@ -76,6 +76,7 @@ main {
 
 body {
   overflow-x: hidden;
+  background-color: rgb(252, 203, 104);
 }
 
 ol,
@@ -127,11 +128,6 @@ html {
   font-display: swap;
 }
 
-.gif {
-  margin: auto;
-  width: 50vw;
-}
-
 #gradient {
   position: fixed;
   top: 0;
@@ -148,7 +144,7 @@ html {
   overflow-x: hidden;
   padding-bottom: 10vh;
   background-color: transparent;
-  mix-blend-mode: overlay;
+  //mix-blend-mode: overlay;
 
   &::after {
     content: "";
@@ -180,7 +176,7 @@ html {
     padding: 10vh 0 8vh 0;
 
     &:first-of-type {
-      padding: 0 0 30vh 0;
+      padding: 0;
     }
   }
 
@@ -285,14 +281,9 @@ html {
 
     &#mano4 {
       width: 70vw;
-      bottom: 2%;
+      bottom: 0;
       right: -1vw;
     }
   }
 
 }
-
-/* .nop {
-  color: rgb(252, 203, 104), rgb(203, 152, 102), rgb(203, 102, 51), rgb(101, 152, 102), rgb(102, 152, 51), rgb(51, 152, 152), rgb(52, 103, 103);
-  
-} */

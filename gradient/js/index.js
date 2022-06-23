@@ -46,7 +46,7 @@ titles.forEach( title => {
     scrollTrigger: {
       scroller: container,
       trigger: title,
-      start: 'top top+=90%',
+      start: 'top top+=95%',
       end: 'top top+=40%',
       scrub: 1
       },
@@ -73,20 +73,20 @@ manos.forEach(mano => {
     ScrollTrigger.create({
       scroller: container,
       trigger: mano,
-      start: '22% top+=60%',
+      start: '22% top+=70%',
       onEnter: () => manoBrillo.classList.toggle('active'),
       onLeaveBack: () => manoBrillo.classList.toggle('active')
     });
-  }
+  };
   
-  gsap.fromTo(mano, { y: 200 }, { y: -250,
+  gsap.to(mano, { y: -600,
     scrollTrigger: {
       scroller: container,
       trigger: mano,
-      start: 'top top+=95%',
-      end: 'top top-=50%',
+      start: 'top top+=98%',
+      end: 'top top',
       scrub: 2
-      },
+      }
     }
   );
 });
@@ -102,16 +102,6 @@ colorsTriggers.forEach((color, i) => {
       scrub: true
     }
   });
-});
-
-gsap.to(".gif", {
-  scale: 2, duration: 1.2, ease: "power3.inOut",
-  scrollTrigger: {
-    scroller: container,
-    trigger: ".gif",
-    start: 'top top+=100%',
-    toggleActions: "play none none reverse"
-  }
 });
 
 locoScroll.on("scroll", ScrollTrigger.update);
