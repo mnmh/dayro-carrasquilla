@@ -74,9 +74,13 @@ main {
   display: block;
 }
 
+html,
 body {
+  margin: 0;
+  height: 100%;
   overflow-x: hidden;
-  background-color: rgb(252, 203, 104);
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
 }
 
 ol,
@@ -126,6 +130,10 @@ html {
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+body {
+  background-color: rgb(252, 203, 104);
 }
 
 #gradient {
