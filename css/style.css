@@ -417,48 +417,7 @@ footer {
   text-align: center;
 }
 
-.thumb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 
-.thumbs-block {
-  position: relative;
-  overflow: hidden;
-}
-
-.thumbs-block .thumbs {
-  display: flex;
-  flex-flow: row nowrap;
-  background-size: cover;
-  padding: 70px;
-}
-
-.thumbs-block .thumbs .thumb img {
-  max-width: 250px;
-  margin: 20px;
-  transform: scale(1);
-  transition: all 0.8s ease-in-out;
-}
-
-.thumbs-block .thumbs .thumb img:hover {
-  max-width: 250px;
-  margin: 20px;
-  transform: scale(1.3);
-  transition: all 0.8s ease-in-out;
-  z-index: 1;
-  cursor: pointer;
-}
-
-.thumbs-block .thumbs .background img {
-  position: absolute;
-  width: auto !important;
-  max-width: inherit;
-  left: 0;
-  top: 0;
-}
 
 .w-50 {
   width: calc(50% - 5px);

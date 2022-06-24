@@ -4,6 +4,7 @@ gsap.registerPlugin(Draggable);
 const container = document.querySelector("#container");
 const titles = Array.from(container.querySelectorAll("h2"));
 const paragraphs = Array.from(container.querySelectorAll("p"));
+const anchors = Array.from(container.querySelectorAll("a"));
 paragraphs.shift();
 const manos = Array.from(container.querySelectorAll(".manoBox"));
 const gradient = document.querySelector("#gradient");
@@ -76,13 +77,27 @@ paragraphs.forEach( ps => {
   );
 });
 
+anchors.forEach( as => {
+  gsap.from( as, { y: 150 }, { y: -60, 
+    scrollTrigger: {
+      scroller: container,
+      trigger: as,
+      start: 'top top+=95%',
+      end: 'top top+=25%',
+      markers: true,
+      scrub: 1
+      },
+    }
+  );
+});
+
 manos.forEach(mano => {
   if (mano.querySelector(".manoBrillo") != null) {
     let manoBrillo = mano.querySelector(".manoBrillo");
     ScrollTrigger.create({
       scroller: container,
       trigger: mano,
-      start: '22% top+=70%',
+      start: '30% top+=70%',
       onEnter: () => manoBrillo.classList.toggle('active'),
       onLeaveBack: () => manoBrillo.classList.toggle('active')
     });
