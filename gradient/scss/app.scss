@@ -243,6 +243,7 @@ body {
     position: absolute;
     z-index: 200;
     pointer-events: none;
+    will-change: scroll-position, opacity;
 
     img {
       width: 100%;
