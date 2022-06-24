@@ -1,4 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(Draggable);
 
 const container = document.querySelector("#container");
 const titles = Array.from(container.querySelectorAll("h2"));
