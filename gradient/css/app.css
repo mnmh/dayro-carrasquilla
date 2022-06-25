@@ -147,7 +147,6 @@ body {
 
 #container {
   padding: 0;
-  position: relative;
   z-index: 100;
   overflow-x: hidden;
   padding-bottom: 10vh;
@@ -175,17 +174,68 @@ body {
   position: relative;
   width: 100%;
 }
+#container h2,
+#container h3,
+#container p {
+  -webkit-marquee-increment: 0vw;
+  font-size: clamp(var(--min), var(--val), var(--max));
+}
 #container section {
   width: 100%;
   padding: 10vh 0 8vh 0;
+  position: relative;
 }
 #container section:first-of-type {
   padding: 0;
 }
-#container h2,
-#container p {
-  -webkit-marquee-increment: 0vw;
-  font-size: clamp(var(--min), var(--val), var(--max));
+#container section.ubicacion {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  margin-bottom: 0vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#container section.ubicacion img {
+  position: absolute;
+  z-index: 500;
+  width: 90vw;
+  max-width: 90vw;
+  height: 90vh;
+  max-height: 90vh;
+}
+#container section.ubicacion img.map-colombia {
+  width: 100vw;
+  max-width: 100vw;
+  left: 6vw;
+}
+#container section.ubicacion h3 {
+  --min: 8rem;
+  --val: 9vw;
+  --max: 10rem;
+  font-family: "Noto Serif Display";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  max-width: 70vw;
+  color: #e2e2b7;
+  position: absolute;
+  z-index: 100;
+  left: 8vw;
+  opacity: 1;
+}
+#container section.ubicacion h3:nth-child(1) {
+  opacity: 1;
+}
+#container section.ubicacion h3:nth-child(3) {
+  opacity: 1;
 }
 #container h2 {
   --min: 7rem;
@@ -196,7 +246,7 @@ body {
   font-style: normal;
   line-height: 1;
   max-width: 50vw;
-  margin: 0 0 5vh 37vw;
+  margin: 0 0 5vh 34vw;
   color: #e2e2b7;
   opacity: 0.8;
 }
@@ -210,12 +260,12 @@ body {
   line-height: 1.3;
   max-width: 40vw;
   margin-bottom: 3rem;
-  margin-left: 40vw;
+  margin-left: 37vw;
   color: beige;
   padding: 10px 0 10px 25px;
   border-left: 1px solid rgba(245, 245, 220, 0.2);
 }
-#container p:first-child {
+#container p.header {
   --min: 1.8rem;
   --val: calc(0.7vw + 1.4rem);
   --max: 3rem;
@@ -236,6 +286,7 @@ body {
 #container .manoBox {
   position: absolute;
   z-index: 200;
+  bottom: -80%;
   pointer-events: none;
   will-change: scroll-position, opacity;
 }
@@ -252,29 +303,26 @@ body {
   top: 0;
   left: 0;
   opacity: 0;
-  -webkit-transition: opacity 0.7s ease-out;
-  transition: opacity 0.7s ease-out;
+  -webkit-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
 }
 #container .manoBox img.manoBrillo.active {
   opacity: 1;
 }
 #container .manoBox#mano1 {
   width: 70vw;
-  top: 25%;
   left: -20vw;
 }
 #container .manoBox#mano2 {
   width: 70vw;
-  top: 40%;
   right: -20vw;
 }
 #container .manoBox#mano3 {
   width: 70vw;
-  top: 60%;
   left: -20vw;
 }
 #container .manoBox#mano4 {
   width: 70vw;
-  bottom: 0;
   right: -1vw;
+  bottom: 0;
 }
