@@ -1,10 +1,8 @@
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(Draggable);
 
 const container = document.querySelector("#container");
 const titles = Array.from(container.querySelectorAll("h2"));
 const paragraphs = Array.from(container.querySelectorAll("p"));
-const anchors = Array.from(container.querySelectorAll("a"));
 paragraphs.shift();
 const manos = Array.from(container.querySelectorAll(".manoBox"));
 const gradient = document.querySelector("#gradient");
@@ -51,6 +49,80 @@ ScrollTrigger.scrollerProxy(container, {
   pinType: container.style.transform ? "transform" : "fixed"
 });
 
+gsap.from(".ubicacion h3:nth-child(1)", { y: -400, 
+  scrollTrigger: {
+    scroller: container,
+    trigger: ".ubicacion h3:nth-child(1)",
+    start: 'bottom top+=98%',
+    end: 'bottom top+=5%',
+    scrub: 1
+    },
+  }
+);
+
+gsap.timeline({
+  defaults: { ease: "power1.inOut", duration: 2, force3D: false },
+  scrollTrigger: {
+    scroller: container,
+    trigger: ".ubicacion",
+    start: "top top",
+    end: "top -400%",
+    pin: true,
+    scrub: 1,
+  }
+})
+  .to(".map-colombia", { autoAlpha: 0, scale: 2, xPercent: 42, yPercent: -8, ease: "power3.out" })
+  .from(".map-bolivar", { autoAlpha: 0, scale: 0.2, xPercent: -15, yPercent: 3 }, "<0.1")
+  .from("h3:nth-child(2)", { autoAlpha: 0, duration: 1.5 }, "<")
+  .to("h3:nth-child(1)", { autoAlpha: 0, duration: 1 }, "<0.5")
+  .to(".map-bolivar", { autoAlpha: 0, scale: 2, xPercent: 10, yPercent: 40, delay: 1 })
+  .from(".map-cartagena", { autoAlpha: 0, scale: 0.4, xPercent: -6, yPercent: -26 }, "<0.3")
+  .from("h3:nth-child(3)", { autoAlpha: 0, duration: 1.5 }, "<")
+  .to("h3:nth-child(2)", { autoAlpha: 0, duration: 1 }, "<0.5")
+  .to(".map-cartagena", { autoAlpha: 0, scale: 2, xPercent: 18, yPercent: 57, delay: 1 })
+  .from(".map-barrios", { autoAlpha: 0, scale: 0.4, xPercent: -8, yPercent: -34 }, "<0.3")
+  .from("h3:nth-child(4)", { autoAlpha: 0, duration: 1.5 }, "<")
+  .to("h3:nth-child(3)", { autoAlpha: 0, duration: 1 }, "<0.5")
+  .to(".map-barrios", { autoAlpha: 0, scale: 1.5, xPercent: -15, yPercent: -32, delay: 1 })
+  .from(".map-nelson", { autoAlpha: 0, scale: 0.4, xPercent: 18, yPercent: 18}, "<0.6")
+  .to("h3:nth-child(4)", { top: 0, duration: 2.2 }, "<")
+;
+
+manos.forEach(mano => {
+  gsap.to(mano, { y: -600,
+    scrollTrigger: {
+      scroller: container,
+      trigger: mano,
+      start: 'top top+=98%',
+      end: 'top top',
+      scrub: 2
+      }
+    }
+  );
+  if (mano.querySelector(".manoBrillo") != null) {
+    let manoBrillo = mano.querySelector(".manoBrillo");
+    ScrollTrigger.create({
+      scroller: container,
+      trigger: mano,
+      start: '22% top+=70%',
+      onEnter: () => manoBrillo.classList.toggle('active'),
+      onLeaveBack: () => manoBrillo.classList.toggle('active')
+    });
+  };
+});
+
+colorsTriggers.forEach((color, i) => {
+  gsap.fromTo(gradient, { background: colors[i] }, { background: colors[i + 1],
+    scrollTrigger: {
+      scroller: container,
+      trigger: color,
+      start: 'top top+=2px',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+});
+
 titles.forEach( title => {
   gsap.fromTo(title, { y: 150 }, { y: -60, 
     scrollTrigger: {
@@ -75,56 +147,6 @@ paragraphs.forEach( ps => {
       },
     }
   );
-});
-
-anchors.forEach( as => {
-  gsap.from( as, { y: 150 }, { y: -60, 
-    scrollTrigger: {
-      scroller: container,
-      trigger: as,
-      start: 'top top+=95%',
-      end: 'top top+=25%',
-      markers: true,
-      scrub: 1
-      },
-    }
-  );
-});
-
-manos.forEach(mano => {
-  if (mano.querySelector(".manoBrillo") != null) {
-    let manoBrillo = mano.querySelector(".manoBrillo");
-    ScrollTrigger.create({
-      scroller: container,
-      trigger: mano,
-      start: '30% top+=70%',
-      onEnter: () => manoBrillo.classList.toggle('active'),
-      onLeaveBack: () => manoBrillo.classList.toggle('active')
-    });
-  };
-  
-  gsap.to(mano, { y: -600,
-    scrollTrigger: {
-      scroller: container,
-      trigger: mano,
-      start: 'top top+=98%',
-      end: 'top top',
-      scrub: 2
-      }
-    }
-  );
-});
-
-colorsTriggers.forEach((color, i) => {
-  gsap.fromTo(gradient, { background: colors[i] }, { background: colors[i + 1],
-    scrollTrigger: {
-      scroller: container,
-      trigger: color,
-      start: 'top top+=2px',
-      end: 'bottom top',
-      scrub: true
-    }
-  });
 });
 
 locoScroll.on("scroll", ScrollTrigger.update);
