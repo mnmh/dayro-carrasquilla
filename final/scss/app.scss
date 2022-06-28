@@ -134,8 +134,6 @@ html {
   overflow-x: hidden;
   padding-bottom: 10vh;
   background-color: transparent;
-  opacity: 1;
-  transition: all .3s ease-in-out;
   //mix-blend-mode: overlay;
 
   &::after {
@@ -165,7 +163,9 @@ html {
 
   section {
     width: 100%;
-    padding: 10vh 0 8vh 0;
+    padding: 0vh 0 8vh 0;
+    max-width: 60vw;
+    margin: 0 auto;
     position: relative;
 
     &:first-of-type {
@@ -225,8 +225,55 @@ html {
 
       }
     }
+
+    &.m-section{
+      min-height: 70vh;
+    }
+
+    &.big-quote{
+      display: flex;
+      margin: 0 auto;
+
+      p{
+        --min: 1.5rem;
+        --val: 2.5rem;
+        --max: 5rem;
+        display: -webkit-box;
+      }
+    }
+
+    &.divider{
+      height: 100vh;
+    }
+
+    &.dark{
+      p{
+        color: #454545;
+      }
+      
+    }
+
+    &:first-of-type {
+      padding: 0;
+    }
+
+    .right-col{
+      width: 70%;
+      margin-left: 30%;
+    }
+
+    .left-col{
+      width: 70%;
+    }
+
+    &.f-width{
+      max-width: 100%;
+
+      img{
+        width: 100%;
+      }
+    }
   }
-    
 
   .center{
     text-align: center;

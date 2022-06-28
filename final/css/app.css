@@ -135,9 +135,6 @@ html {
   overflow-x: hidden;
   padding-bottom: 10vh;
   background-color: transparent;
-  opacity: 1;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
 }
 
 #container::after {
@@ -167,7 +164,9 @@ html {
 
 #container section {
   width: 100%;
-  padding: 10vh 0 8vh 0;
+  padding: 0vh 0 8vh 0;
+  max-width: 60vw;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -228,6 +227,53 @@ html {
 
 #container section.ubicacion h3:nth-child(3) {
   opacity: 1;
+}
+
+#container section.m-section {
+  min-height: 70vh;
+}
+
+#container section.big-quote {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+}
+
+#container section.big-quote p {
+  --min: 1.5rem;
+  --val: 2.5rem;
+  --max: 5rem;
+  display: -webkit-box;
+}
+
+#container section.divider {
+  height: 100vh;
+}
+
+#container section.dark p {
+  color: #454545;
+}
+
+#container section:first-of-type {
+  padding: 0;
+}
+
+#container section .right-col {
+  width: 70%;
+  margin-left: 30%;
+}
+
+#container section .left-col {
+  width: 70%;
+}
+
+#container section.f-width {
+  max-width: 100%;
+}
+
+#container section.f-width img {
+  width: 100%;
 }
 
 #container .center {
