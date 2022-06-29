@@ -214,9 +214,9 @@ html {
       }
 
       h3 {
-        --min: 3rem;
-        --val: 4rem;
-        --max: 5rem;
+        --min: 2rem;
+        --val: 3rem;
+        --max: 4rem;
         font-family: "Merienda One", cursive;
         font-weight: normal;
         font-style: normal;
@@ -999,7 +999,7 @@ html {
 }
 
 .title-yellow{
-  color: #FCCB68;
+  color: #FCCB68 !important;
 }
 
 .w-5{
