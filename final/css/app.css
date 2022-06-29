@@ -173,7 +173,7 @@ html {
 #container section {
   width: 100%;
   padding: 0vh 0 8vh 0;
-  max-width: 80vw;
+  max-width: 75vw;
   margin: 0 auto;
   position: relative;
 }
@@ -250,7 +250,7 @@ html {
 }
 
 #container section.big-quote p {
-  --min: 2.2rem;
+  --min: 1.8rem;
   --val: 2.2rem;
   --max: 5rem;
   display: -webkit-box;
@@ -389,7 +389,7 @@ html {
 #container .manoBox#mano1 {
   width: 90vw;
   top: 0%;
-  left: -50vw;
+  left: -60vw;
 }
 
 #container .manoBox#mano2 {
