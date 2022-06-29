@@ -105,7 +105,7 @@ manos.forEach(mano => {
       scroller: container,
       trigger: mano,
       markers: true,
-      start: '15% top+=25%',
+      start: '4% top+=15%',
       onEnter: () => manoBrillo.classList.toggle('active'),
       onLeaveBack: () => manoBrillo.classList.toggle('active')
     });
