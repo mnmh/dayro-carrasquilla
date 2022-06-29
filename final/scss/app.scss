@@ -83,6 +83,14 @@ body {
   overflow-scrolling: touch;
 }
 
+em{
+  font-style: italic;
+}
+
+b{
+  font-weight: 700;
+}
+
 ol,
 ul {
   list-style: none;
@@ -375,9 +383,9 @@ html {
     }
 
     &#mano1 {
-      width: 80vw;
+      width: 70vw;
       top: 3%;
-      left: -40vw;
+      left: -60vw;
     }
 
     &#mano2 {
