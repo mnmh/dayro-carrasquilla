@@ -250,14 +250,18 @@ html {
 }
 
 #container section.big-quote p {
-  --min: 2.5rem;
-  --val: 2.5rem;
+  --min: 2.2rem;
+  --val: 2.2rem;
   --max: 5rem;
   display: -webkit-box;
 }
 
 #container section.divider {
   height: 100vh;
+}
+
+#container section.mid-divider {
+  height: 50vh;
 }
 
 #container section.dark p {
@@ -383,8 +387,8 @@ html {
 }
 
 #container .manoBox#mano1 {
-  width: 70vw;
-  top: 3%;
+  width: 90vw;
+  top: 0%;
   left: -50vw;
 }
 
@@ -395,9 +399,9 @@ html {
 }
 
 #container .manoBox#mano3 {
-  width: 80vw;
-  top: 13%;
-  left: -50vw;
+  width: 90vw;
+  top: 0%;
+  left: -55vw;
 }
 
 #container .manoBox#mano4 {
