@@ -452,6 +452,30 @@ a{
   }
 }
 
+#countdown{
+  background: url('../images/video.png');
+  background-size: cover;
+  width: 100%;
+  padding: 100px;
+
+  ul{
+    width: 500px;
+    height: 500px;
+    display: grid;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    justify-items: center;
+    margin: 0 auto;
+    padding: 6rem;
+
+    li{
+      font-family: "Merienda One", cursive;
+      font-size: 3rem;
+      color: white;
+    }
+  }
+}
+
 /***TOGGLE***/
 
 .toggle,
