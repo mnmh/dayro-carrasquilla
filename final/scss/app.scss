@@ -91,6 +91,10 @@ b{
   font-weight: 700;
 }
 
+p{
+  line-height: 160%;
+}
+
 ol,
 ul {
   list-style: none;
@@ -248,7 +252,6 @@ html {
         --val: 2.2rem;
         --max: 5rem;
         display: -webkit-box;
-        line-height: 160%;
       }
     }
 
