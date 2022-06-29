@@ -173,7 +173,7 @@ html {
 #container section {
   width: 100%;
   padding: 0vh 0 8vh 0;
-  max-width: 60vw;
+  max-width: 70vw;
   margin: 0 auto;
   position: relative;
 }
@@ -260,7 +260,7 @@ html {
 }
 
 #container section.dark p {
-  color: #454545;
+  color: #454545 !important;
 }
 
 #container section:first-of-type {
@@ -384,13 +384,13 @@ html {
 #container .manoBox#mano1 {
   width: 70vw;
   top: 3%;
-  left: -60vw;
+  left: -50vw;
 }
 
 #container .manoBox#mano2 {
   width: 90vw;
-  top: 10%;
-  right: -1vw;
+  top: 70%;
+  right: -20vw;
 }
 
 #container .manoBox#mano3 {
