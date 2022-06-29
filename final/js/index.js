@@ -104,7 +104,6 @@ manos.forEach(mano => {
     ScrollTrigger.create({
       scroller: container,
       trigger: mano,
-      markers: true,
       start: '22% top+=30%',
       onEnter: () => manoBrillo.classList.toggle('active'),
       onLeaveBack: () => manoBrillo.classList.toggle('active')
