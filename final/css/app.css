@@ -144,6 +144,10 @@ html {
   margin-top: 10% !important;
 }
 
+.mt-20 {
+  margin-top: 20% !important;
+}
+
 #container {
   padding: 0;
   position: relative;
