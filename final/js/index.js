@@ -124,7 +124,7 @@ colorsTriggers.forEach((color, i) => {
 });
 
 titles.forEach( title => {
-  gsap.fromTo(title, { y: 50 }, { y: 0, 
+  gsap.fromTo(title, { y: 30 }, { y: -5, 
     scrollTrigger: {
       scroller: container,
       trigger: title,
