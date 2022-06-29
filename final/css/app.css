@@ -303,6 +303,10 @@ html {
   width: 100%;
 }
 
+#container section.m-width {
+  max-width: 800px;
+}
+
 #container .center {
   text-align: center;
 }
@@ -359,9 +363,9 @@ html {
 }
 
 #container p:first-child {
-  --min: 1.8rem;
-  --val: calc(0.7vw + 1.4rem);
-  --max: 3rem;
+  --min: 1.6rem;
+  --val: calc(0.5vw + 1.4rem);
+  --max: 2.8rem;
   color: white;
   max-width: 100vw;
   -webkit-box-align: center;
