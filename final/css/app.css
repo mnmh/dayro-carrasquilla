@@ -60,7 +60,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 18px;
   font: inherit;
   vertical-align: baseline;
   text-rendering: optimizeLegibility;
@@ -173,7 +173,7 @@ html {
 #container section {
   width: 100%;
   padding: 0vh 0 8vh 0;
-  max-width: 75vw;
+  max-width: 60vw;
   margin: 0 auto;
   position: relative;
 }
@@ -246,12 +246,12 @@ html {
   display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
-  max-width: 950px;
+  max-width: 800px;
 }
 
 #container section.big-quote p {
-  --min: 1.8rem;
-  --val: 2.2rem;
+  --min: 2.3rem;
+  --val: 2.6rem;
   --max: 5rem;
   display: -webkit-box;
 }
@@ -315,12 +315,12 @@ html {
   line-height: 1;
   margin: 0 0 5vh 0;
   color: #993333;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 #container h2.big-title {
-  --min: 3rem;
-  --val: 4.9rem;
+  --min: 2rem;
+  --val: 4.5rem;
   --max: 8rem;
 }
 
@@ -401,7 +401,7 @@ html {
 #container .manoBox#mano3 {
   width: 90vw;
   top: 0%;
-  left: -55vw;
+  left: -65vw;
 }
 
 #container .manoBox#mano4 {
