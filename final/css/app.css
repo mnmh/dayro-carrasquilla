@@ -173,7 +173,7 @@ html {
 #container section {
   width: 100%;
   padding: 0vh 0 8vh 0;
-  max-width: 70vw;
+  max-width: 80vw;
   margin: 0 auto;
   position: relative;
 }
@@ -246,10 +246,11 @@ html {
   display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
+  max-width: 950px;
 }
 
 #container section.big-quote p {
-  --min: 1.5rem;
+  --min: 2.5rem;
   --val: 2.5rem;
   --max: 5rem;
   display: -webkit-box;
@@ -268,8 +269,8 @@ html {
 }
 
 #container section .right-col {
-  width: 70%;
-  margin-left: 30%;
+  width: 60%;
+  margin-left: 40%;
 }
 
 #container section .left-col {
