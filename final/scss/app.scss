@@ -142,11 +142,17 @@ footer{
     max-width: 1000px;
     width: 100%;
     display: inline-block;
-    padding: 0 50px;
+    padding: 50px;
   }
 
   p{
-    font-size: 1rem !important;
+    font-size: 35px !important;
+    max-width: 700px;
+    margin: 0 auto;
+    :first-child{
+      font-size: 40px !important;
+      font-weight: 700 !important;
+    }
   }
 }
 
@@ -178,6 +184,10 @@ a{
 
 .mt-20{
   margin-top: 20% !important; 
+}
+
+.mb-5{
+  margin-bottom: 5% !important;
 }
 
 
