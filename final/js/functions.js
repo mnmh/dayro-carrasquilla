@@ -68,6 +68,7 @@ $(".photo").on("click", function () {
 /* toggle */
 
 // Show an element
+var scroll = document.getElementsByClassName('has-scroll-smooth');
 var show = function (elem) {
   // Get the natural height of the element
   var getHeight = function () {
@@ -80,6 +81,7 @@ var show = function (elem) {
   var height = getHeight(); // Get the natural height
   elem.classList.add("is-visible"); // Make the element visible
   elem.style.height = height; // Update the max-height
+  scroll.classList.add('noscroll');
 };
 
 // Hide an element
@@ -97,6 +99,7 @@ var hide = function (elem) {
   window.setTimeout(function () {
     elem.classList.remove("is-visible");
     elem.classList.remove("mask-hide");
+    html.classList.add('noscroll');
   }, 2000);
 };
 

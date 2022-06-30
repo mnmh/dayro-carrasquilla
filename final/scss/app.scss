@@ -137,13 +137,19 @@ footer{
   background-color: #173533;
   padding: 100px 20px;
   text-align: center;
+
+  img{
+    max-width: 1000px;
+    width: 100%;
+    display: inline-block;
+    padding: 0 50px;
+  }
+
+  p{
+    font-size: 1rem !important;
+  }
 }
 
-footer img{
-  max-width: 1000px;
-  width: 100%;
-  display: inline-block
-}
 
 a{
   font-family: "Dosis", sans-serif;
@@ -390,17 +396,6 @@ a{
     padding: 10px 0 10px 0;
     font-weight: 300;
 
-    &:first-child {
-      --min: 1.6rem;
-      --val: calc(0.5vw + 1.4rem);
-      --max: 2.8rem;
-      color: white;
-      max-width: 100vw;
-      align-items: center;
-      padding-bottom: 0;
-      margin-bottom: 0;
-      font-weight: 300;
-    }
   }
 
   .manoBox {
@@ -538,6 +533,13 @@ a{
   margin: 4rem 0;
   text-align: center;
   max-width: 400px;
+  transition: all 1s;
+
+  &:hover{
+    transition: all 1s;
+    background: #FCCB68;
+    box-shadow: 0 0 5px #FCCB68, 0 0 25px #FCCB68, 0 0 50px #fff, 0 0 100px #fff;
+  }
 
   img {
     width: 30px;
@@ -553,6 +555,15 @@ a{
     filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%)
       contrast(100%);
     transition: all 0.4s ease-in-out;
+  }
+  &.dark{
+    color: #454545;
+    border-color: #454545 !important;
+
+    img{
+      -webkit-filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(30%) contrast(100%);
+      filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(30%) contrast(100%);
+    }
   }
 }
 
@@ -773,7 +784,7 @@ a{
     float: left;
     margin: 2px;
     width: 32%;
-    cursor: pointer;
+    cursor: -webkit-zoom-in;
     background: #000;
     -webkit-animation: small 0.5s ease-in-out both;
     animation: small 0.5s ease-in-out both;
@@ -786,6 +797,7 @@ a{
     &.active {
       -webkit-animation: big 0.5s ease-in-out both;
       animation: big 0.5s ease-in-out both;
+      cursor: -webkit-zoom-out;
     }
     &:nth-child(1) {
       -webkit-transform-origin: 0% 0%;
@@ -850,6 +862,14 @@ a{
     top: -24%;
     cursor: pointer;
 
+    .forma-interactiva{
+      background: rgba(252, 203, 104, .5);
+      border-radius: 100%;
+      width: 100px;
+      height: 100px;
+      transform-origin: center;
+    }
+
     &:hover .forma-interactiva {
       opacity: 1;
       transition: all 0.2s ease-in-out;
@@ -867,8 +887,10 @@ a{
       width: 30%;
 
       &:hover .forma-interactiva {
-        opacity: 1;
         transition: all 0.2s ease-in-out;
+        border-radius: 0%;
+        width: 88%;
+        height: 27%;
       }  
 
       &:hover .content-fecha {
@@ -905,8 +927,6 @@ a{
       }
 
       .forma-interactiva {
-        width: 88%;
-        height: 27%;
         transform: skew(0deg, 6deg);
         -webkit-transform: skew(0deg, 0deg);
         -moz-transform: skew(0deg, 0deg);
@@ -915,8 +935,6 @@ a{
         position: absolute;
         top: 37%;
         left: 10%;
-        opacity: 0;
-        background: rgba(252, 203, 104, .5);
         transition: all 0.2s ease-in-out;
       }
     }
@@ -953,8 +971,6 @@ a{
       }
 
       .forma-interactiva {
-        width: 56%;
-        height: 37%;
         transform: skew(-2deg, 3deg);
         -webkit-transform: skew(-2deg, 3deg);
         -moz-transform: skew(-2deg, 3deg);
@@ -963,8 +979,6 @@ a{
         position: absolute;
         top: 26%;
         left: 13%;
-        opacity: 0;
-        background: rgba(252, 203, 104, .5);
         transition: all 0.2s ease-in-out;
       }
 
@@ -975,8 +989,10 @@ a{
       }  
 
       &:hover .forma-interactiva {
-        opacity: 1;
         transition: all 0.2s ease-in-out;
+        border-radius: 0%;
+        width: 56%;
+        height: 37%;
       }      
     }
     
@@ -991,7 +1007,9 @@ a{
       }
       
       &:hover .forma-interactiva {
-        opacity: 1;
+        border-radius: 0%;
+        width: 74%;
+        height: 29%;
         transition: all 0.2s ease-in-out;
       }  
 
@@ -1024,8 +1042,6 @@ a{
       }
 
       .forma-interactiva {
-        width: 74%;
-        height: 29%;
         transform: skew(-2deg, 3deg);
         -webkit-transform: skew(-2deg, 3deg);
         -moz-transform: skew(-2deg, 3deg);
@@ -1034,8 +1050,6 @@ a{
         position: absolute;
         left: 0%;
         top: 34%;
-        opacity: 0;
-        background: rgba(252, 203, 104, .5);
         transition: all 0.2s ease-in-out;
       }
     }
@@ -1051,7 +1065,9 @@ a{
       }
 
       &:hover .forma-interactiva {
-        opacity: 1;
+        border-radius: 0%;
+        width: 36%;
+        height: 18%;
         transition: all 0.2s ease-in-out;
       }  
 
@@ -1083,8 +1099,6 @@ a{
       }
 
       .forma-interactiva {
-        width: 36%;
-        height: 18%;
         transform: skew(0deg, 6deg);
         -webkit-transform: skew(-3deg, 3deg);
         -moz-transform: skew(-3deg, 3deg);
@@ -1093,8 +1107,6 @@ a{
         position: absolute;
         top: 37%;
         left: 4%;
-        opacity: 0;
-        background: rgba(252, 203, 104, .5);
         transition: all 0.2s ease-in-out;
       }
     }
@@ -1154,4 +1166,129 @@ a{
 .w-5{
   max-width: 50vw;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1300px){
+  #container{
+    section{
+      
+      max-width: 90vw;
+
+      &.big-quote{
+        max-width: 600px;
+
+        p{
+          --min: 1.5rem;
+          --val: 1.8rem;
+          --max: 5rem;
+        }
+      }
+    }
+    h2{
+      &.big-title{
+        --val: 4rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 920px){
+  #container{
+
+    section{
+      
+      padding: 20px;
+      max-width: 90vw;
+      display: block;
+
+      &.divider{
+        height: 50vh;
+      }
+
+      &.mid-divider {
+        height: 20vh;
+      }
+
+      &.big-quote{
+        max-width: 600px;
+
+        p{
+          --min: 1rem;
+          --val: 1.4rem;
+          --max: 5rem;
+        }
+      }
+      .right-col{
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .left-col{
+        width: 100%;
+      }
+    }
+    h2{
+      &.big-title{
+        --val: 2.5rem;
+      }
+    }
+
+    h2{
+      --min: 1.5rem;
+      --val: 2rem;
+      --max: 5rem;
+
+      small{
+        --min: 1rem;
+        --val: 1.5rem;
+        --max: 4rem;
+      }
+    }
+
+    p{
+      --min: 1rem;
+      --val: 1.4rem;
+      --max: 2.8rem;
+    }
+
+    .manoBox{
+      position: relative;
+
+      &#mano1 {
+        width: 100vw;
+        top: 30vh;
+        left: -10vw;
+      }
+      &#mano2 {
+        width: 100vw;
+      }
+      &#mano3 {
+        width: 100vw;
+        top: 20vh;
+        left: -20vw;
+      }
+      &#mano4 {
+        width: 100vw;
+        top: 40vh;
+        right: -30vw;
+      }
+    }
+  }
+  .w-5{
+    max-width: 100vw;
+  }
+
+  #countdown{
+    padding: 20px;
+    ul{
+      width: 200px;
+      height: 200px;
+      padding: 2rem;
+
+      li{
+        font-size: 1rem;
+      }
+    }
+  }
+  
 }

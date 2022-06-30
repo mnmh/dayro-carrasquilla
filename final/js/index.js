@@ -65,9 +65,10 @@ gsap.timeline({
   scrollTrigger: {
     scroller: container,
     trigger: ".ubicacion",
-    start: "top top",
+    start: "top top+=5%",
     end: "top -400%",
     pin: true,
+    markers: true,
     scrub: 1,
   }
 })
@@ -104,7 +105,7 @@ manos.forEach(mano => {
     ScrollTrigger.create({
       scroller: container,
       trigger: mano,
-      start: '2% top+=20%',
+      start: '15% top+=20%',
       onEnter: () => manoBrillo.classList.toggle('active'),
       onLeaveBack: () => manoBrillo.classList.toggle('active')
     });
@@ -128,8 +129,8 @@ titles.forEach( title => {
     scrollTrigger: {
       scroller: container,
       trigger: title,
-      start: 'top top+=80%',
-      end: 'top top+=20%',
+      start: 'top top+=95%',
+      end: 'top top+=40%',
       scrub: 1
       },
     }
@@ -141,8 +142,8 @@ paragraphs.forEach( ps => {
     scrollTrigger: {
       scroller: container,
       trigger: ps,
-      start: 'top top+=80%',
-      end: 'top top+=20%',
+      start: 'top top+=95%',
+      end: 'top top+=60%',
       scrub: 1
       },
     }
