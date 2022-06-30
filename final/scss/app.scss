@@ -483,9 +483,19 @@ a{
   }
 }
 
-.container-fluid{
+.zoom{
   img{
   display: inline-block;
+  width: 100%;
+  }
+}
+
+.container-fluid{
+  &.territorioPazzz{
+    img{
+      width: 100%;
+      display: inline-block;
+    }
   }
 }
 
@@ -659,12 +669,6 @@ a{
 }
 
 .modal{
-
-  .container-fluid{
-    img{
-    display: inline-block;
-    }
-  }
 
   &#fragmentos {
     background-color: #cb9866;
@@ -1152,15 +1156,13 @@ a{
 }
 
 .thumbs-block .thumbs .thumb img {
-  max-width: 250px;
+  max-width: 350px;
   margin: 20px;
   transform: scale(1);
   transition: all 0.8s ease-in-out;
 }
 
 .thumbs-block .thumbs .thumb img:hover {
-  max-width: 250px;
-  margin: 20px;
   transform: scale(1.3);
   transition: all 0.8s ease-in-out;
   z-index: 1;

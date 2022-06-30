@@ -477,7 +477,13 @@ a {
   color: #454545 !important;
 }
 
-.container-fluid img {
+.zoom img {
+  display: inline-block;
+  width: 100%;
+}
+
+.container-fluid.territorioPazzz img {
+  width: 100%;
   display: inline-block;
 }
 
@@ -677,10 +683,6 @@ a {
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-}
-
-.modal .container-fluid img {
-  display: inline-block;
 }
 
 .modal#fragmentos {
@@ -1252,7 +1254,7 @@ a {
 }
 
 .thumbs-block .thumbs .thumb img {
-  max-width: 250px;
+  max-width: 350px;
   margin: 20px;
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -1261,8 +1263,6 @@ a {
 }
 
 .thumbs-block .thumbs .thumb img:hover {
-  max-width: 250px;
-  margin: 20px;
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
   -webkit-transition: all 0.8s ease-in-out;
