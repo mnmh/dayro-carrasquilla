@@ -65,10 +65,9 @@ gsap.timeline({
   scrollTrigger: {
     scroller: container,
     trigger: ".ubicacion",
-    start: "top top+=5%",
+    start: "top top+=0%",
     end: "top -400%",
     pin: true,
-    markers: true,
     scrub: 1,
   }
 })

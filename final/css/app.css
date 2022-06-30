@@ -168,6 +168,10 @@ a {
   z-index: -10;
 }
 
+.mt-5 {
+  margin-top: 5% !important;
+}
+
 .mt-10 {
   margin-top: 10% !important;
 }
@@ -473,6 +477,10 @@ a {
   color: #454545 !important;
 }
 
+.container-fluid img {
+  display: inline-block;
+}
+
 .credit {
   font-size: .9rem !important;
   text-align: center;
@@ -669,6 +677,10 @@ a {
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+
+.modal .container-fluid img {
+  display: inline-block;
 }
 
 .modal#fragmentos {
@@ -1282,6 +1294,7 @@ a {
   }
   #container section.big-quote {
     max-width: 600px;
+    padding: 20px;
   }
   #container section.big-quote p {
     --min: 1.5rem;

@@ -168,6 +168,10 @@ a{
   z-index: -10;
 }
 
+.mt-5{
+  margin-top: 5% !important; 
+}
+
 .mt-10{
   margin-top: 10% !important; 
 }
@@ -479,6 +483,12 @@ a{
   }
 }
 
+.container-fluid{
+  img{
+  display: inline-block;
+  }
+}
+
 .credit{
   font-size: .9rem !important;
   text-align: center;
@@ -649,6 +659,12 @@ a{
 }
 
 .modal{
+
+  .container-fluid{
+    img{
+    display: inline-block;
+    }
+  }
 
   &#fragmentos {
     background-color: #cb9866;
@@ -1176,6 +1192,7 @@ a{
 
       &.big-quote{
         max-width: 600px;
+        padding: 20px;
 
         p{
           --min: 1.5rem;
