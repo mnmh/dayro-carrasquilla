@@ -1,3 +1,5 @@
+
+
 $(function () {
   const $bl = $(".thumbs-block"),
     $th = $(".thumbs"),
@@ -32,9 +34,6 @@ $(function () {
       clearInterval(itv);
     });
 });
-
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(Draggable);
 
 const imageContainer = document.querySelector(".zoom");
 imageContainer.onmousemove = (event) => {
@@ -169,22 +168,22 @@ slider.addEventListener("mousemove", (e) => {
 
 var firstYear = document.getElementById("1980");
 firstYear.addEventListener("click", function (e) {
-  location.replace("../escalamiento-del-conflicto-80s.html");
+  location.replace("/escalamiento-del-conflicto-80s.html");
 });
 
 var secondYear = document.getElementById("1988");
 secondYear.addEventListener("click", function (e) {
-  location.replace("../agravamiento-del-conflicto-90s.html");
+  location.replace("/agravamiento-del-conflicto-90s.html");
 });
 
 var thirdYear = document.getElementById("1997");
 thirdYear.addEventListener("click", function (e) {
-  location.replace("../el-gran-exodo-1997.html");
+  location.replace("/el-gran-exodo-1997.html");
 });
 
 var fourYear = document.getElementById("2005");
 fourYear.addEventListener("click", function (e) {
-  location.replace("../desplazamiento-2005.html");
+  location.replace("/desplazamiento-2005.html");
 });
 
 (function () {
