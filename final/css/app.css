@@ -211,8 +211,8 @@ a {
   font-size: 3rem;
   display: block;
   opacity: 0;
-  -webkit-animation: scale 3s 1s ease-out forwards;
-  animation: scale 3s 1s ease-out forwards;
+  -webkit-animation: scale 4s 1s ease-out forwards;
+  animation: scale 4s 1s ease-out forwards;
 }
 
 .cover .toggle {
