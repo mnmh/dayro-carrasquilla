@@ -1007,6 +1007,17 @@ h3:nth-child(4) {
   opacity: 0.8;
 }
 
+footer{
+  text-align: center;
+}
+
+footer img {
+  max-width: 1000px;
+  width: 100%;
+  display: inline-block;
+  margin: 0 auto;
+}
+
  @media screen and (max-width: 920px){
    h2{
      font-size: 2rem;
@@ -1026,5 +1037,9 @@ h3:nth-child(4) {
    }
    .big-quote{
      font-size: 1.6rem;
+   }
+
+   #my_dataviz{
+     overflow-x: scroll;
    }
  }
