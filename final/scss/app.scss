@@ -764,7 +764,7 @@ a{
   }
 
   &.datos-tiempo{
-    background-color: #fccb68;
+    background-color: rgb(252, 203, 104);
     overflow-y: scroll;
     padding: 50px 0;
 
@@ -1050,6 +1050,61 @@ a{
 .linea-interactiva {
   position: relative;
   height: 100%;
+
+  .mask-image{
+    mask-image: url(https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png);
+    -webkit-mask-size: 300% 150%;
+    mask-size: 300% 150%;
+    mask-mode: alpha;
+    mask-repeat: no-repeat;
+    mask-position: bottom !important;
+    -webkit-mask-image: url(https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png);
+    -webkit-mask-size: 300% 150%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: bottom !important;
+  }
+
+  .toggle{
+    mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png");
+    mask-size: 100% 100%;
+    mask-mode: alpha;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-image: url("https://res.cloudinary.com/daqkfiwnc/image/upload/v1647573770/assets/mask_cloud_gzcgdf.png");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    border: 0;
+    border-radius: 0;
+    padding: 50px;
+    background: rgba(252, 203, 104, .6);
+    &:hover{
+      padding: 80px;
+      background: rgba(252, 203, 104, 1);
+    }
+    &:nth-child(2){
+      position: absolute;
+      top: 30%;
+      left: 10%;
+    }
+
+    &:nth-child(3){
+      position: absolute;
+      top: 30%;
+      left: 30%;
+    }
+    &:nth-child(4){
+      position: absolute;
+      top: 30%;
+      right: 40%;
+    }
+
+    &:nth-child(5){
+      position: absolute;
+      top: 30%;
+      right: 25%;
+    }
+  }
 
   .fechas {
     height: 170%;
