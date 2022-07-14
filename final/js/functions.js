@@ -210,3 +210,251 @@ slider.addEventListener("mousemove", (e) => {
         //seconds
       }, 0)
   }());
+
+
+  //Gráfica Escalamiento 80s
+
+  // create 1 data_set
+  var data1 = [
+    { group: "1978-1982<br>Julio Cesar Turbay Ayala", value: 2224 },
+    { group: "1982-1986<br>Belisario Betancur Cuartas", value: 19819 },
+    { group: "1986-1990<br>Virgilio Barco Vargas", value: 87203 },
+  ];
+
+  var data2 = [
+    { group: "1978-1982<br>Julio Cesar Turbay Ayala", value: 2224 },
+    { group: "1982-1986<br>Belisario Betancur Cuartas", value: 19819 },
+    { group: "1986-1990<br>Virgilio Barco Vargas", value: 87203 },
+    { group: "1990-1994<br>César Gaviria Trujillo", value: 133900 },
+    { group: "1994-1998<br>Ernesto Samper Pizano", value: 548686 },
+  ];
+
+  var data3 = [
+    { group: "1978-1982<br>Julio Cesar Turbay Ayala", value: 2224 },
+    { group: "1982-1986<br>Belisario Betancur Cuartas", value: 19819 },
+    { group: "1986-1990<br>Virgilio Barco Vargas", value: 87203 },
+    { group: "1990-1994<br>César Gaviria Trujillo", value: 133900 },
+    { group: "1994-1998<br>Ernesto Samper Pizano", value: 548686 },
+    { group: "1998-2002<br>Andrés Pastrana Arango ", value: 1827331 },
+    { group: "2002-2006<br>Álvaro Uribe Velez -I ", value: 1630614 },
+  ];
+
+  var data4 = [
+    { group: "1978-1982<br>Julio Cesar Turbay Ayala", value: 2224 },
+    { group: "1982-1986<br>Belisario Betancur Cuartas", value: 19819 },
+    { group: "1986-1990<br>Virgilio Barco Vargas", value: 87203 },
+    { group: "1990-1994<br>César Gaviria Trujillo", value: 133900 },
+    { group: "1994-1998<br>Ernesto Samper Pizano", value: 548686 },
+    { group: "1998-2002<br>Andrés Pastrana Arango ", value: 1827331 },
+    { group: "2002-2006<br>Álvaro Uribe Velez -I ", value: 1630614 },
+    { group: "2006-2010<br>Álvaro Uribe Velez -II", value: 1364398 },
+    { group: "2010-2014<br>Juan Manuel Santos", value: 969576 },
+  ];
+
+  // set the dimensions and margins of the graph
+  var margin = { top: 30, right: 30, bottom: 70, left: 60 },
+    width = 1250 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
+
+  // append the svg object to the body of the page
+  var svg = d3
+    .select("#escalamiento")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  // Initialize the X axis
+  var x = d3.scaleBand().range([0, width]).padding(0.2);
+  var xAxis = svg
+    .append("g")
+    .attr("transform", "translate(0," + height + ")");
+
+  // Initialize the Y axis
+  var y = d3.scaleLinear().range([height, 0]);
+  var yAxis = svg.append("g").attr("class", "myYaxis");
+
+  // A function that create / update the plot for a given variable:
+  function update(data) {
+    // Update the X axis
+    x.domain(
+      data.map(function (d) {
+        return d.group;
+      })
+    );
+    xAxis.call(d3.axisBottom(x));
+
+    // Update the Y axis
+    y.domain([
+      0,
+      d3.max(data, function (d) {
+        return d.value;
+      }),
+    ]);
+    yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+    // Create the u variable
+    var u = svg.selectAll("rect").data(data);
+
+    u.enter()
+      .append("rect") // Add a new rect for each new elements
+      .merge(u) // get the already existing elements as well
+      .transition() // and apply changes to all of them
+      .duration(1000)
+      .attr("x", function (d) {
+        return x(d.group);
+      })
+      .attr("y", function (d) {
+        return y(d.value);
+      })
+      .attr("width", x.bandwidth())
+      .attr("height", function (d) {
+        return height - y(d.value);
+      })
+      .attr("fill", "#993333");
+
+    // If less group in the new dataset, I delete the ones not in use anymore
+    u.exit().remove();
+  }
+
+  // Initialize the plot with the first dataset
+  update(data1);
+
+
+  //Gráfica Agravamiento
+
+  // create 1 data_set
+  var data1 = [
+    { group: "1978-1982", value: 2224 },
+    { group: "1982-1986", value: 19819 },
+    { group: "1986-1990", value: 87203 },
+  ];
+    
+/*    Julio Cesar Turbay Ayala
+    Belisario Betancur Cuartas
+    Virgilio Barco Vargas*/
+
+  var data2 = [
+    { group: "1978-1982", value: 2224 },
+    { group: "1982-1986", value: 19819 },
+    { group: "1986-1990", value: 87203 },
+    { group: "1990-1994", value: 133900 },
+    { group: "1994-1998", value: 548686 },
+  ];
+    
+    /*Julio Cesar Turbay Ayala
+    Belisario Betancur Cuartas
+    Virgilio Barco Vargas
+    César Gaviria Trujillo
+    Ernesto Samper Pizano*/
+
+  var data3 = [
+    { group: "1978-1982<br>Julio Cesar Turbay Ayala", value: 2224 },
+    { group: "1982-1986", value: 19819 },
+    { group: "1986-1990", value: 87203 },
+    { group: "1990-1994", value: 133900 },
+    { group: "1994-1998", value: 548686 },
+    { group: "1998-2002", value: 1827331 },
+    { group: "2002-2006", value: 1630614 },
+  ];
+    
+    /*Julio Cesar Turbay Ayala
+    Belisario Betancur Cuartas
+    Virgilio Barco Vargas
+    César Gaviria Trujillo
+    Ernesto Samper Pizano
+    Andrés Pastrana Arango
+    Álvaro Uribe Velez -I*/
+
+  var data4 = [
+    { group: "1978-1982", value: 2224 },
+    { group: "1982-1986", value: 19819 },
+    { group: "1986-1990", value: 87203 },
+    { group: "1990-1994", value: 133900 },
+    { group: "1994-1998", value: 548686 },
+    { group: "1998-2002", value: 1827331 },
+    { group: "2002-2006", value: 1630614 },
+    { group: "2006-2010", value: 1364398 },
+    { group: "2010-2014", value: 969576 },
+  ];
+    
+    /*Julio Cesar Turbay Ayala
+    Belisario Betancur Cuartas
+    Virgilio Barco Vargas
+    César Gaviria Trujillo
+    Ernesto Samper Pizano
+    Andrés Pastrana Arango
+    Álvaro Uribe Velez -I 
+    Álvaro Uribe Velez -II
+    Juan Manuel Santos*/
+
+  // set the dimensions and margins of the graph
+  var margin = { top: 30, right: 30, bottom: 70, left: 60 },
+    width = 1250 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
+
+  // append the svg object to the body of the page
+  var svg = d3
+    .select("#agravamiento")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  // Initialize the X axis
+  var x = d3.scaleBand().range([0, width]).padding(0.2);
+  var xAxis = svg
+    .append("g")
+    .attr("transform", "translate(0," + height + ")");
+
+  // Initialize the Y axis
+  var y = d3.scaleLinear().range([height, 0]);
+  var yAxis = svg.append("g").attr("class", "myYaxis");
+
+  // A function that create / update the plot for a given variable:
+  function update(data) {
+    // Update the X axis
+    x.domain(
+      data.map(function (d) {
+        return d.group;
+      })
+    );
+    xAxis.call(d3.axisBottom(x));
+
+    // Update the Y axis
+    y.domain([
+      0,
+      d3.max(data, function (d) {
+        return d.value;
+      }),
+    ]);
+    yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+    // Create the u variable
+    var u = svg.selectAll("rect").data(data);
+
+    u.enter()
+      .append("rect") // Add a new rect for each new elements
+      .merge(u) // get the already existing elements as well
+      .transition() // and apply changes to all of them
+      .duration(1000)
+      .attr("x", function (d) {
+        return x(d.group);
+      })
+      .attr("y", function (d) {
+        return y(d.value);
+      })
+      .attr("width", x.bandwidth())
+      .attr("height", function (d) {
+        return height - y(d.value);
+      })
+      .attr("fill", "#993333");
+
+    // If less group in the new dataset, I delete the ones not in use anymore
+    u.exit().remove();
+  }
+
+  // Initialize the plot with the first dataset
+  update(data2);

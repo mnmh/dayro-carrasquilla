@@ -690,6 +690,10 @@ a {
   transition: opacity 0.3s ease-in-out;
 }
 
+.toggle-content.datos-tiempo.is-visible {
+  display: block;
+}
+
 .inside-button {
   position: absolute;
   top: 10px;
@@ -782,6 +786,92 @@ a {
 
 .modal#pazzz {
   background-color: #348080;
+}
+
+.modal.datos-tiempo {
+  background-color: #fccb68;
+  overflow-y: scroll;
+  padding: 50px 0;
+}
+
+.modal.datos-tiempo .center {
+  text-align: center;
+}
+
+.modal.datos-tiempo p {
+  font-size: 1.8rem;
+  font-family: "Dosis", sans-serif;
+  color: #454545;
+  font-weight: 300;
+}
+
+.modal.datos-tiempo h2 {
+  font-family: "Merienda One", cursive;
+  color: #993333;
+  font-size: 3.5rem;
+}
+
+.modal.datos-tiempo h2 small {
+  display: block;
+  font-size: 2.5rem;
+}
+
+.modal.datos-tiempo .graphic-table {
+  color: #454545;
+}
+
+.modal.datos-tiempo .graphic-table:hover {
+  background-color: #454545;
+  color: #fff;
+}
+
+.modal.datos-tiempo .left-col {
+  width: 70%;
+  margin: 40px 0;
+}
+
+.modal.datos-tiempo .m-section {
+  min-height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal.datos-tiempo .m-section.mw-80 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.modal.datos-tiempo .m-section.big-quote {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.modal.datos-tiempo .m-section.big-quote p {
+  font-size: 2.2rem !important;
+  display: -webkit-box;
+}
+
+.modal section {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .content-modal {
@@ -1097,6 +1187,22 @@ a {
   cursor: pointer;
 }
 
+.linea-interactiva .fechas.toggle {
+  margin: auto;
+  text-align: center;
+  max-width: auto;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  border: 0;
+  max-width: auto;
+}
+
+.linea-interactiva .fechas.toggle:hover {
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .linea-interactiva .fechas .forma-interactiva {
   background: rgba(252, 203, 104, 0.5);
   border-radius: 100%;
@@ -1224,6 +1330,7 @@ a {
   left: 13%;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  pointer-events: none;
 }
 
 .linea-interactiva .fechas.fecha-1988:hover .content-fecha {

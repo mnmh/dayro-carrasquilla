@@ -675,6 +675,11 @@ a{
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
   }
+  &.datos-tiempo{
+    &.is-visible{
+      display: block;
+    }
+  }
 }
 
 .inside-button {
@@ -756,6 +761,76 @@ a{
 
   &#pazzz {
     background-color: #348080;
+  }
+
+  &.datos-tiempo{
+    background-color: #fccb68;
+    overflow-y: scroll;
+    padding: 50px 0;
+
+    .center{
+      text-align: center;
+    }
+    
+    p{
+      font-size: 1.8rem;
+      font-family: "Dosis", sans-serif;
+      color: #454545;
+      font-weight: 300;
+    }
+    h2{
+      font-family: "Merienda One", cursive;
+      color: #993333;
+      font-size: 3.5rem;
+
+      small{
+        display: block;
+        font-size: 2.5rem;
+      }
+    }
+
+    .graphic-table{
+      color: #454545;
+
+      &:hover{
+        background-color: #454545;
+        color: #fff;
+      }
+    }
+
+    .left-col{
+      width: 70%;
+      margin: 40px 0;
+    }
+
+    .m-section{
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      &.mw-80{
+        display: flex;
+        margin: 0 auto;
+        max-width: 800px;
+      }
+      &.big-quote{
+        display: flex;
+        margin: 0 auto;
+        max-width: 800px;
+  
+        p{
+          font-size: 2.2rem !important;
+          display: -webkit-box;
+        }
+      }
+    }
+  }
+
+  section{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
   }
 
 }
@@ -983,6 +1058,21 @@ a{
     top: -24%;
     cursor: pointer;
 
+    &.toggle{
+      margin: auto;
+      text-align: center;
+      max-width: auto;
+      -webkit-transition: all 1s;
+      transition: all 1s;
+      border: 0;
+      max-width: auto;
+
+      &:hover{
+        background: transparent;
+        box-shadow: none;
+      }
+    }
+
     .forma-interactiva{
       background: rgba(252, 203, 104, .5);
       border-radius: 100%;
@@ -1101,6 +1191,7 @@ a{
         top: 26%;
         left: 13%;
         transition: all 0.2s ease-in-out;
+        pointer-events: none;
       }
 
       &:hover .content-fecha {
